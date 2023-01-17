@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+## 安装 Husky
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```bash
+npm install husky@4.2.5 --save-dev
+```
 
-## Available Scripts
+Husky 是一个 Git 钩子工具，对 git 执行的一些命令，通过对应的 hooks 钩子触发，执行自定义的脚本程序。它用于规范代码提交，保证代码质量。
 
-In the project directory, you can run:
+在 package.json 中添加如下配置，实现在 git commit 时，自动执行 `npm run lint` 命令。
 
-### `npm start`
+```json
+"husky": {
+  "hooks": {
+    "pre-commit": "npm run lint"
+  }
+}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## git commit 规范
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+核心语法如下：  
 
-### `npm test`
+```js
+type(scope?): subject  #scope is optional; multiple scopes are supported (current delimiter options: "/", "\" and ",")
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| type     | commit 的类型                                            |
+| -------- | -------------------------------------------------------- |
+| feat     | 新功能、新特性                                           |
+| fix      | 修改 bug                                                 |
+| perf     | 更改代码，以提高性能                                     |
+| refactor | 代码重构（重构，在不影响代码内部行为、功能下的代码修改） |
+| docs     | 文档修改                                                 |
+| style    | 代码格式修改, 注意不是 css 修改（例如分号修改）          |
+| test     | 测试用例新增、修改                                       |
+| build    | 影响项目构建或依赖项修改                                 |
+| revert   | 恢复上一次提交                                           |
+| ci       | 持续集成相关文件修改                                     |
+| chore    | 其他修改（不在上述类型中的修改）                         |
+| release  | 发布新版本                                               |
+| workflow | 工作流相关文件修改                                       |
 
-### `npm run build`
+示例：
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| commit message                     | 描述                      |
+| ---------------------------------- | ------------------------- |
+| chore: init                        | 初始化项目                |
+| chore: update deps                 | 更新依赖                  |
+| chore: wording                     | 调整文字（措词）          |
+| chore: fix typos                   | 修复拼写错误              |
+| chore: release v1.0.0              | 发布 1.0.0 版本           |
+| fix: icon size                     | 修复图标大小              |
+| fix: value.length -> values.length | value 变量调整为 values   |
+| feat(blog): add comment section    | blog 新增评论部分         |
+| feat: support typescript           | 新增 typescript 支持      |
+| feat: improve xxx types            | 改善 xxx 类型             |
+| style(component): code             | 调整 component 代码样式   |
+| refactor: xxx                      | 重构 xxx                  |
+| perf(utils): random function       | 优化 utils 的 random 函数 |
+| docs: xxx.md                       | 添加 xxx.md 文章          |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## CSS 变量位置
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CSS 变量的位置在 `src/_variables.scss` 文件中。存储了基础设计系统。
 
-### `npm run eject`
+## normalize.css
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+normalize.css 是一个 CSS reset 文件，用于重置浏览器的默认样式。在 `src/_normalize.scss` 文件中。它会保护你的网站在不同浏览器中的一致性。并为大部分浏览器提供了一些有用的默认样式。修复了一些浏览器的 bug，保证了一些浏览器的一致性。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+见 [normalize.css](https://necolas.github.io/normalize.css/)。本项目中，该文件是 `src/_reboot.scss`。做了一些变量替换，来适应本项目的设计系统。
