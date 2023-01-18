@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'standard-with-typescript'
   ],
@@ -11,10 +12,17 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json']
+    project: ['./tsconfig.json'],
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   plugins: [
     'react'
   ],
-  rules: {}
-}
+  rules: {
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    'react/prop-types': 'off',
+    semi: 'off'
+  }
+};

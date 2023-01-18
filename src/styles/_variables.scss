@@ -10,16 +10,17 @@ $gray-800:#343a40 !default;
 $gray-900:#212529 !default;
 $black:#000 !default;
 
-$blue:#0486FE !default;
-$indigo:#6610f2 !default;
+$blue:#3794ff !default;
+$indigo:#7828C8 !default;
 $purple:#6f42c1 !default;
 $pink:#e83e8c !default;
-$red:#dc3545 !default;
+$red:#F31260 !default;
 $orange:#fd7e14 !default;
-$yellow:#ffc107 !default;
-$green:#28a745 !default;
+$yellow:#F5A524 !default;
+$green:#17C964 !default;
 $teal:#20c997 !default;
 $cyan:#17a2b8 !default;
+$dark:#343a40 !default;
 
 $primary:$blue !default;
 $secondary:$indigo !default;
@@ -28,6 +29,7 @@ $info:$cyan !default;
 $warning:$yellow !default;
 $danger:$red !default;
 $light:$gray-100 !default;
+$primary-light:#0485fe29 !default;
 
 $theme-colors: 
 (
@@ -157,9 +159,9 @@ $enable-pointer-cursor-for-buttons:           true !default;
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .25rem !default;
-$border-radius-lg:            .3rem !default;
-$border-radius-sm:            .2rem !default;
+$border-radius:               .4rem !default;
+$border-radius-lg:            .6rem !default;
+$border-radius-sm:            .3rem !default;
 
 // different box shadow
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
@@ -169,18 +171,18 @@ $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 
 // buttons
 $btn-font-weight:             400;
-$btn-padding-y:               .375rem !default;
-$btn-padding-x:               .75rem !default;
+$btn-padding-y:               .2rem !default;
+$btn-padding-x:               .90rem !default;
 $btn-font-family:             $font-family-base !default;
 $btn-font-size:               $font-size-base !default;
 $btn-line-height:             $line-height-base !default;
 
 // different button sizes
-$btn-padding-y-sm:            .25rem !default;
+$btn-padding-y-sm:            .1rem !default;
 $btn-padding-x-sm:            .5rem !default;
 $btn-font-size-sm:            $font-size-sm !default;
 
-$btn-padding-y-lg:            .5rem !default;
+$btn-padding-y-lg:            .2rem !default;
 $btn-padding-x-lg:            1rem !default;
 $btn-font-size-lg:            $font-size-lg !default;
 
@@ -198,11 +200,11 @@ $btn-link-disabled-color:     $gray-600 !default;
 
 
 // button radius
-$btn-border-radius:           $border-radius !default;
-$btn-border-radius-lg:        $border-radius-lg !default;
-$btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius:           2rem !default;
+$btn-border-radius-lg:        2.5rem !default;
+$btn-border-radius-sm:        1.5rem !default;
 
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow 2s ease-in-out !default;
 
 // menu
 $menu-border-width:            $border-width !default;

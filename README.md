@@ -68,3 +68,85 @@ CSS 变量的位置在 `src/_variables.scss` 文件中。存储了基础设计�
 normalize.css 是一个 CSS reset 文件，用于重置浏览器的默认样式。在 `src/_normalize.scss` 文件中。它会保护你的网站在不同浏览器中的一致性。并为大部分浏览器提供了一些有用的默认样式。修复了一些浏览器的 bug，保证了一些浏览器的一致性。
 
 见 [normalize.css](https://necolas.github.io/normalize.css/)。本项目中，该文件是 `src/_reboot.scss`。做了一些变量替换，来适应本项目的设计系统。
+
+## 需求分析
+
+以 Button 组件为例。  
+
+### Button Type
+
+按钮类型分为 Primary、Secondary、Success、Danger、Link、Ghost、Default。
+
+### Button Size
+
+按钮大小分为 Large、Default、Small。
+
+### Button Disabled
+
+按钮禁用状态。
+
+### 使用方法
+
+```jsx
+<Button
+  type="primary"
+  size="large"
+  disabled={false}
+  href=""?
+  className=""?
+  autoFocus={false}?
+  ...
+>
+  Button
+</Button>
+```
+
+## classnames NPM 包
+
+classnames 是一个 npm 包，用于拼接 classnames。  
+
+```bash
+npm i classnames
+npm i @types/classnames -D
+```
+
+使用方法：
+
+```jsx
+import classnames from 'classnames';
+
+const Button = (props) => {
+  const { className, ...restProps } = props;
+  const classes = classnames('btn', className, {
+    [`btn-${props.type}`]: props.type,
+    [`btn-${props.size}`]: props.size,
+    disabled: props.disabled,
+  });
+  return <button className={classes} {...restProps} />;
+};
+```
+
+文档地址：[classnames github](https://github.com/JedWatson/classnames)
+
+## mixin
+
+mixin 是一种**代码复用**的方式。在 SCSS 中，可以使用 `@mixin` 和 `@include` 来实现 mixin。  
+
+```scss
+@mixin mixin-name {
+  // some styles
+}
+
+@include mixin-name;
+```
+
+相当于 css 中的函数，它可以接受参数。  
+
+```scss
+@mixin mixin-name($paramborder,$paramcolor) {
+  border: $paramborder;
+  color: $paramcolor;
+}
+
+@include mixin-name(1px solid red, blue);
+```

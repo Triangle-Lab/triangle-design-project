@@ -1,0 +1,134 @@
+.btn{
+    position: relative;
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    color: $body-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border:$btn-border-width solid transparent;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    // box-shadow: $btn-box-shadow;
+    cursor: pointer;
+    transition: $btn-transition;
+    &:focus,
+    &.focus{
+        animation: bounce .3s;
+    }
+    &.disabled,
+    &[disabled]{
+        opacity: $btn-disabled-opacity;
+        cursor: not-allowed;
+        box-shadow: none;
+        > *{
+            pointer-events: none;
+        }
+    }
+
+}
+
+
+.btn-lg{
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
+.btn-sm{
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+.btn-primary{
+    @include button-style($primary, $primary, $white);
+}
+
+.btn-secondary{
+    @include button-style($secondary, $secondary, $white);
+}
+
+.btn-success{
+    @include button-style($success, $success, $white);
+}
+
+.btn-danger{
+    @include button-style($danger, $danger, $white);
+}
+
+.btn-default{
+    @include button-style($white, $gray-400,$body-color,$white,$primary,$primary);
+}
+
+.btn-outline{
+    @include button-style($primary-light, $primary,$body-color,$primary-light,$primary,$primary);
+}
+
+.btn-link{
+    font-weight: $font-weight-normal;
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+    &:hover,
+    &.hover{
+        color: $btn-link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+    &:focus,
+    &.focus{
+        text-decoration: $link-hover-decoration;
+    }
+    &:disabled,
+    &.disabled{
+        color: $btn-link-disabled-color;
+        pointer-events: none;
+    }
+}
+
+
+@-webkit-keyframes bounce {
+  0%{
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  40% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -3px, 0);
+            transform: translate3d(0, -3px, 0);
+  }
+  70% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -2px, 0);
+            transform: translate3d(0, -2px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -1px, 0);
+            transform: translate3d(0, -1px, 0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  40% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -3px, 0);
+            transform: translate3d(0, -3px, 0);
+  }
+  70% {
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -2px, 0);
+            transform: translate3d(0, -2px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -1px, 0);
+            transform: translate3d(0, -1px, 0);
+  }
+}
