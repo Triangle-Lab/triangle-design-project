@@ -55,11 +55,11 @@
 }
 
 .btn-default{
-    @include button-style($white, $gray-400,$body-color,$white,$primary,$primary);
+    @include button-style($white, $gray-400,$body-color,$white,$primary,$primary,none);
 }
 
 .btn-outline{
-    @include button-style($primary-light, $primary,$body-color,$primary-light,$primary,$primary);
+    @include button-style($primary-light,$primary,$primary,$primary-light,$primary,$primary);
 }
 
 .btn-link{
@@ -78,6 +78,7 @@
     &:disabled,
     &.disabled{
         color: $btn-link-disabled-color;
+        cursor: not-allowed;
         pointer-events: none;
     }
 }
