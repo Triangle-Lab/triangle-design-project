@@ -150,3 +150,157 @@ mixin 是一种**代码复用**的方式。在 SCSS 中，可以使用 `@mixin` 
 
 @include mixin-name(1px solid red, blue);
 ```
+
+## 组件测试
+
+### 测试的意义
+
+- 高质量的代码
+- 保证代码的可靠性，更早发现问题
+- 保证代码的可维护性，让重构更加轻松
+
+### React 为什么适合单元测试
+
+- Component 组件
+- Function 函数
+- 单向数据流
+
+### Jest
+
+Jest 是一个 JavaScript 测试框架，由 Facebook 开发。它可以让你的测试用例更加简单、快速、可靠。地址：[Jest](https://jestjs.io/)。  
+
+**断言**即测试一个值是否是预期的值。Jest 提供了一些断言方法。  
+
+```js
+test('two plus two is four', () => {
+  expect(2 + 2).toBe(4);  // 等于
+  expect(2 + 2).not.toBe(5);  // 不等于
+});
+```
+
+即 **期望 2 + 2 等于 4**。
+
+运行：  
+
+```bash
+npx jest jest.test.js
+```
+
+可以使用 `watch` 参数，实现自动化测试。  
+
+```bash
+npx jest jest.test.js --watch
+```
+
+布尔类型的断言方法：  
+
+```js
+test('object assignment', () => {
+  expect(1).toBeTruthy();  // 真
+  expect(0).toBeFalsy();  // 假
+});
+```
+
+数字类型的断言方法：  
+
+```js
+test('two plus two', () => {
+  const value = 2 + 2;
+  expect(value).toBeGreaterThan(3);  // 大于
+  expect(value).toBeGreaterThanOrEqual(3.5);  // 大于等于
+  expect(value).toBeLessThan(5);  // 小于
+  expect(value).toBeLessThanOrEqual(4.5);  // 小于等于
+});
+```
+
+对象类型的断言方法：  
+
+```js
+test('there is no I in team', () => {
+  expect({name: 'test'}).not.toBe({name: 'test1'});  // 不相等
+  expect({name: 'test'}).toEqual({name: 'test'});  // 相等，值相等
+  expect({name: 'test'}).toBe({name: 'test'});  // 相等，完全相等
+});
+```
+
+## React-Testing-Library
+
+React-Testing-Library 是一个 React 测试工具，它可以让你的测试用例更加简单、快速、可靠。地址：[React-Testing-Library](https://testing-library.com/docs/react-testing-library/intro/)。  
+
+在 create-react-app 中，已经集成了 React-Testing-Library。  
+
+来测试按钮组件：  
+
+```jsx
+test('our first react test case', () => {
+  const wrapper = render(<Button>Nice</Button>) // render the component
+  const element = wrapper.queryByText('Nice') // find the element
+  expect(element).toBeTruthy() // check if the element exists
+  expect(element).toBeInTheDocument() // check if the element is in the document
+})
+```
+
+上面的测试用例先渲染了 Button 组件，然后找到了文本为 `Nice` 的元素，最后断言这个元素存在。  
+
+运行：  
+
+```bash
+npx jest button.test.js
+```
+
+如果发生了错误，会显示错误信息。  
+
+```jsx
+test('our first react test case', () => {
+  const wrapper = render(<Button>Nice</Button>) // render the component
+  const element = wrapper.queryByText('Nice1') // find the element
+  expect(element).toBeTruthy() // check if the element exists
+  expect(element).toBeInTheDocument() // check if the element is in the document
+})
+```
+
+例如，上面的测试用例中，找到的元素文本为 `Nice1`，而不是 `Nice`，所以会报错。  
+
+```bash
+× our first react test case (29 ms)
+
+  ● our first react test case
+
+    expect(received).toBeTruthy()
+
+    Received: null
+
+       6 |   const wrapper = render(<Button>Nice</Button>) // render the component
+       7 |   const element = wrapper.queryByText('Nice1') // find the element
+    >  8 |   expect(element).toBeTruthy() // check if the element exists
+         |                   ^
+       9 |   expect(element).toBeInTheDocument() // check if the element is in the document
+      10 | })
+```
+
+## jest-dom
+
+jest-dom 是一个扩展的断言方法，它可以让你的测试用例更加简单、快速、可靠。地址：[jest-dom](https://github.com/testing-library/jest-dom)。
+
+它为我们添加了针对 dom 类型的断言方法。例如：  
+
+- toBeDisabled
+- toBeEmpty
+- toBeEnabled
+- toBeEmptyDOMElement
+- toBeInTheDocument
+- toBeInvalid
+- toBeRequired
+- toBeValid
+- toBeVisible
+- toContainElement
+
+新版的 Create-React-App 已经集成了 jest-dom，所以我们可以直接使用。
+
+### setupTests.ts
+
+这个文件是 jest 的配置文件，它会在测试用例运行之前执行。  
+
+### Mock 函数
+
+Mock 函数是 jest 的一个功能，它可以让我们模拟函数的返回值。
