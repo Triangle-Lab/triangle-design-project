@@ -278,3 +278,15 @@ $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-bar-color:                $white !default;
 $progress-bar-transition:           width .6s ease !default;
+
+// alerts
+
+$alert-bg:                          $gray-200 !default;
+$alert-color:                       $gray-700 !default;
+$alert-close-color:                 $gray-700 !default;
+$alert-icon-color:                  $gray-700 !default;
+$alert-title-default-color:         $gray-700 !default;
+$alert-title-success-color:         $success !default;
+$alert-title-danger-color:          $danger !default;
+$alert-title-warning-color:         $warning !default;
+$alert-description-default-color:   $gray-700 !default;

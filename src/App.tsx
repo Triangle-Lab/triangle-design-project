@@ -1,4 +1,5 @@
 import React from 'react'
+import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
 
 function App (): JSX.Element {
@@ -15,6 +16,7 @@ function App (): JSX.Element {
       <Button btnType={ButtonType.Default} style={{ fontWeight: '1000' }}>尝试</Button>
       <Button btnType={ButtonType.Link} href="http://www.bing.com">Baidu Link</Button>
       <Button btnType={ButtonType.Link} href="http://www.bing.com" disabled>Baidu Link</Button>
+      <Alert title="成功警告" description="这是一条成功警告" position={'left'} alertType={AlertType.Success} />
     </div>
   )
 }
