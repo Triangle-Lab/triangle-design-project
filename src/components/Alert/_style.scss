@@ -1,0 +1,73 @@
+.alert{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 40px;
+    width: max-content;
+    border-radius: 4px;
+    background-color: $alert-bg;
+    color: $alert-color;
+    font-size: 14px;
+    line-height: 1.5;
+    // 文字不换行
+    white-space: nowrap;
+    // bounce
+    animation: bounce .3s;
+    .alert-close{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        font-size: 16px;
+        color: $alert-close-color;
+        cursor: pointer;
+        // 去除按钮默认样式
+        border: none;
+        background: none;
+    }
+}
+
+
+.alert-default{
+    @include alert-style($white, $gray-400,$body-color);
+}
+
+.alert-success{
+    @include alert-style($success, $success, $success);
+}
+
+.alert-danger{
+    @include alert-style($danger, $danger, $danger);
+}
+
+.alert-warning{
+    @include alert-style($warning, $warning, $warning);
+}
+
+.alert-left{
+    position: fixed;
+    top: 10%;
+    left: 1rem;
+    z-index: 999;
+}
+
+.alert-right{
+    position: fixed;
+    top: 10%;
+    right: 1rem;
+    z-index: 999;
+}
+
+
+@keyframes bounce{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
