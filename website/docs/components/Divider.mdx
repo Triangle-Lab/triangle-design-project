@@ -1,0 +1,71 @@
+# Divider
+
+import Divider,{DividerStyle} from '../../../src/components/Divider/divider';
+import ShowBar from '/src/components/ShowBar';
+
+## 引入
+
+```js
+import Divider,{ DividerStyle } from '@triangle-ui/divider';
+```
+
+## 使用示例
+
+### 默认
+
+```jsx
+<Divider />
+```
+
+<ShowBar>
+    <Divider />
+</ShowBar>
+
+### 颜色
+
+我们提供了 6 种颜色的分割线，分别是：`primary`、`secondary`、`success`、`default`、`danger`、`warning`。
+
+```jsx
+<Divider style={DividerStyle.Primary} />
+<Divider style={DividerStyle.Secondary} />
+<Divider style={DividerStyle.Success} />
+<Divider style={DividerStyle.Default} />
+<Divider style={DividerStyle.Danger} />
+<Divider style={DividerStyle.Warning} />
+```
+
+<ShowBar>
+    <Divider style={DividerStyle.Primary} />
+    <br/>
+    <Divider style={DividerStyle.Secondary} />
+    <br/>
+    <Divider style={DividerStyle.Success} />
+    <br/>
+    <Divider style={DividerStyle.Default} />
+    <br/>
+    <Divider style={DividerStyle.Danger} />
+    <br/>
+    <Divider style={DividerStyle.Warning} />
+</ShowBar>
+
+### 文字
+
+我们允许在分割线中间添加文字。
+
+```jsx
+<Divider style={DividerStyle.Primary} text="Primary" />
+```
+
+<ShowBar>
+    <Divider style={DividerStyle.Primary} text="Primary" />
+</ShowBar>
+
+## API
+
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :---: | :---: | :---: | :---: | :---: |
+| style | 分割线的颜色 | `DividerStyle` | `DividerStyle.Default` `DividerStyle.Primary` `DividerStyle.Secondary` `DividerStyle.Success` `DividerStyle.Danger` `DividerStyle.Warning` | `DividerStyle.Default` |
+| text | 分割线中间的文字 | `string` | - | - |
+| className | 自定义类名 | `string` | - | - |
+| style | 自定义样式 | `React.CSSProperties` | - | - |

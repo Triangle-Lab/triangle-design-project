@@ -11,7 +11,7 @@
     font-size: 14px;
     line-height: 1.5;
     // 文字不换行
-    white-space: nowrap;
+    // white-space: nowrap;
     // bounce
     animation: bounce .3s;
     .alert-close{
@@ -25,6 +25,16 @@
         // 去除按钮默认样式
         border: none;
         background: none;
+    }
+}
+
+// 移动端
+@media screen and (max-width: 768px){
+    .alert{
+        width: 80%;
+        height: max-content;
+        padding:3px 16px;
+        display: block;
     }
 }
 
@@ -70,4 +80,9 @@
     100%{
         transform: scale(1);
     }
+}
+
+.alert-in{
+    display: flex;
+    justify-content: space-between;
 }
