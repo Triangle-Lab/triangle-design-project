@@ -29,9 +29,11 @@ const Alert: React.FC<AlertProps> = (props) => {
   })
   return (
     <div className={classes} {...restProps}>
-        <div className="alert-title">{title}</div>
-        {(description != null) && <div className="alert-description">{description}</div>}
-          {(closeable ?? false) && (<button className="alert-close" onClick={onClose}>x</button>)}
+          <div className="alert-title">{title}</div>
+          <div className='alert-in'>
+              {(description != null) && <div className="alert-description">{description}</div>}
+              {(closeable ?? false) && (<button className="alert-close" onClick={onClose}>x</button>)}
+          </div>
     </div>
   )
 }
