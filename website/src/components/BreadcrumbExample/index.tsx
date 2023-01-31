@@ -1,16 +1,17 @@
-import Breadcrumb, { BreadcrumbObjectsType } from '../../../../src/components/Breadcrumb/breadcrumb';
+import { BreadcrumbObjectsType } from '../../../../src/components/Breadcrumb/breadcrumb'
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const objectsExample_1: BreadcrumbObjectsType[] = [
   {
     text: '首页',
-    link: '/',
+    link: '/'
   },
   {
     text: '文档',
-    link: '/docs/intro',
+    link: '/docs/intro'
   },
   {
     text: '面包屑',
-    link: '/docs/components/breadcrumb',
-  },
-];
+    link: '/docs/components/breadcrumb'
+  }
+]
