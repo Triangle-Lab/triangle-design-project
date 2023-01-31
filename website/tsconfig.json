@@ -2,9 +2,11 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
+    "strictNullChecks": true,
     "baseUrl": "."
   },
   "include": [
-    "src"
+    "src",
+    "/src/components",
   ]
 }

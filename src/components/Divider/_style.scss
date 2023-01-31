@@ -1,8 +1,4 @@
-// divider component
-
-// 默认是水平的分割线，灰色，由 divider-primary divider-secondary 等决定其线条颜色和文字颜色
-// 分割线有文字时居中，由 orientation-left orientation-right orientation-center 决定其位置
-// divider-vertical 为垂直分割线，divider-horizontal 为水平分割线
+// divider component styles
 
 $divider-color: $gray-400 !default;
 $divider-font-size: $font-size-sm !default;
@@ -45,4 +41,5 @@ $divider-margin: 1rem !default;
 
 .divider-text{
     margin: 0 $divider-margin;
+    @include bounce();
 }

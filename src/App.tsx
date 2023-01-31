@@ -1,8 +1,9 @@
 import React from 'react'
 import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
-
+import Drawer, { DrawerPosition } from './components/Drawer/drawer'
 function App (): JSX.Element {
+  const [show, setShow] = React.useState(true)
   return (
     <div className="App" style={{ margin: '10px' }}>
       <Button>Hello</Button>
@@ -17,6 +18,9 @@ function App (): JSX.Element {
       <Button btnType={ButtonType.Link} href="http://www.bing.com">Baidu Link</Button>
       <Button btnType={ButtonType.Link} href="http://www.bing.com" disabled>Baidu Link</Button>
       <Alert title="成功警告" description="这是一条成功警告" position={'left'} alertType={AlertType.Success} />
+      <Drawer title="抽屉" isShow={show} onClose={() => { setShow(false) }} position={DrawerPosition.Left} width={300} close={false} mask={true} maskClosable={true}>
+        <div>抽屉内容</div>
+      </Drawer>
     </div>
   )
 }

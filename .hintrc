@@ -10,6 +10,9 @@
           "-webkit-text-size-adjust"
         ]
       }
-    ]
+    ],
+    "typescript-config/consistent-casing": "off",
+    "typescript-config/strict": "off",
+    "no-inline-styles": "off"
   }
 }

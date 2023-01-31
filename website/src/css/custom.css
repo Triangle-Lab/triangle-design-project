@@ -185,3 +185,13 @@ div[class^='cardTitle_']{
 .thin-scrollbar::-webkit-scrollbar {
   width: 3px;
 }
+
+.theme-code-block-highlighted-line {
+  background-color: #2e80ec3d !important;
+}
+
+
+
+.menu__list-item{
+  margin-right: .5rem !important;
+}

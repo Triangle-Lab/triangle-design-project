@@ -26,6 +26,7 @@ const Divider: React.FC<DividerProps> = (props) => {
   const classes = classNames('divider', {
     [`divider-${style}`]: style
   })
+
   return (
     <div className={classes} {...restProps}>
         {(text != null) && <span className='divider-text'>{text}</span>}
