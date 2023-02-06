@@ -2,10 +2,34 @@ import React from 'react'
 import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
 import Drawer, { DrawerPosition } from './components/Drawer/drawer'
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
+
 function App (): JSX.Element {
   const [show, setShow] = React.useState(true)
   return (
     <div className="App" style={{ margin: '10px' }}>
+      <Menu defaultIndex={'0'} onSelect = { (index) => { alert(index) } } mode = 'vertical' defaultOpenSubmenus = {['2']}>
+        <MenuItem>
+        cool link 1
+        </MenuItem>
+        <MenuItem disabled>
+        cool link 2
+        </MenuItem>
+        <SubMenu title='dropdown'>
+          <MenuItem>
+          dropdown1
+          </MenuItem>
+          <MenuItem>
+          dropdown2
+          </MenuItem>
+        </SubMenu>
+        <MenuItem>
+        cool link 3
+        </MenuItem>
+      </Menu>
+
       <Button>Hello</Button>
       <Button disabled>Hello</Button>
       <Button btnType={ButtonType.Primary} style={{ margin: '10px' }} size={ButtonSize.Large}>快速开始</Button>
