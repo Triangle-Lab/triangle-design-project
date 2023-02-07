@@ -1,16 +1,22 @@
 import React from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
 import Drawer, { DrawerPosition } from './components/Drawer/drawer'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
+import Icon from './components/Icon/icon'
+import Transition from './components/Transition/transition'
 
+library.add(fas)
 function App (): JSX.Element {
-  const [show, setShow] = React.useState(true)
+  const [show, setShow] = React.useState(false)
   return (
     <div className="App" style={{ margin: '10px' }}>
-      <Menu defaultIndex={'0'} onSelect = { (index) => { alert(index) } } mode = 'vertical' defaultOpenSubmenus = {['2']}>
+      <Icon icon="arrow-down" theme="warning" size="10x"/>
+      <Menu defaultIndex={'0'} onSelect = { (index) => { alert(index) } } mode = 'horizontal' defaultOpenSubmenus = {['2']}>
         <MenuItem>
         cool link 1
         </MenuItem>
@@ -29,7 +35,26 @@ function App (): JSX.Element {
         cool link 3
         </MenuItem>
       </Menu>
-
+      
+      <Button size = {ButtonSize.Large} onClick = {() => { setShow(!show)}} > Toggle </Button>
+      <Transition 
+        in={show}
+        timeout={300}
+        animation="zoom-in-left"
+      >
+      <div>
+      <p>
+        Edit <code> src/App.tsx </code>
+      </p>
+      <p>
+        Edit <code> src/App.tsx </code>
+      </p>
+      <p>
+        Edit <code> src/App.tsx </code>
+      </p>
+      </div>
+      </Transition>
+      
       <Button>Hello</Button>
       <Button disabled>Hello</Button>
       <Button btnType={ButtonType.Primary} style={{ margin: '10px' }} size={ButtonSize.Large}>快速开始</Button>
