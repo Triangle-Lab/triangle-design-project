@@ -1,12 +1,12 @@
 import React from 'react'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
 import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
 import Drawer, { DrawerPosition } from './components/Drawer/drawer'
 
 import Dropdown from './components/Dropdown/dropdown'
-import Calendar from './components/Calendar/calendar'
+// import Calendar from './components/Calendar/calendar'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
@@ -37,9 +37,9 @@ function App (): JSX.Element {
         cool link 3
         </MenuItem>
       </Menu>
-      
-      <Button size = {ButtonSize.Large} onClick = {() => { setShow(!show)}} > Toggle </Button>
-      <Transition 
+
+      <Button size = {ButtonSize.Large} onClick = {() => { setShow(!show) }} > Toggle </Button>
+      <Transition
         in={show}
         timeout={300}
         animation="zoom-in-left"
@@ -56,7 +56,7 @@ function App (): JSX.Element {
       </p>
       </div>
       </Transition>
-      
+
       <Button>Hello</Button>
       <Button disabled>Hello</Button>
       <Button btnType={ButtonType.Primary} style={{ margin: '10px' }} size={ButtonSize.Large}>快速开始</Button>
@@ -75,11 +75,11 @@ function App (): JSX.Element {
       <Dropdown droplist={[<div key="1">option1</div>, <div key="2">option2</div>, <div key="3">option3</div>]}>
         <Button btnType={ButtonType.Primary}>开始</Button>
       </Dropdown>
-      <Calendar
+      {/* <Calendar
         defaultValue='2020-04-01'
         style={{ marginTop: '50px' }}
         onChange={(date) => { console.log(date) }}
-      />
+      /> */}
     </div>
   )
 }
