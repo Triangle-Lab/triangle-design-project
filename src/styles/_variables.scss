@@ -29,6 +29,7 @@ $info:$cyan !default;
 $warning:$yellow !default;
 $danger:$red !default;
 $light:$gray-100 !default;
+$dark:$gray-800 !default;
 $primary-light:#0485fe29 !default;
 
 $theme-colors: ("primary": $primary,
@@ -302,13 +303,25 @@ $progress-bar-color: $white !default;
 $progress-bar-transition: width .6s ease !default;
 
 // alerts
+$alert-bg:                          $gray-200 !default;
+$alert-color:                       $gray-700 !default;
+$alert-close-color:                 $gray-700 !default;
+$alert-icon-color:                  $gray-700 !default;
+$alert-title-default-color:         $gray-700 !default;
+$alert-title-success-color:         $success !default;
+$alert-title-danger-color:          $danger !default;
+$alert-title-warning-color:         $warning !default;
+$alert-description-default-color:   $gray-700 !default;
 
-$alert-bg: $gray-200 !default;
-$alert-color: $gray-700 !default;
-$alert-close-color: $gray-700 !default;
-$alert-icon-color: $gray-700 !default;
-$alert-title-default-color: $gray-700 !default;
-$alert-title-success-color: $success !default;
-$alert-title-danger-color: $danger !default;
-$alert-title-warning-color: $warning !default;
-$alert-description-default-color: $gray-700 !default;
+//menu
+$menu-border-width:                 $border-width !default;
+$menu-border-color:                 $border-color !default;
+$menu-box-shadow:                   inset 0 1px 0 rgba($white, .15), 0 1px 1px !default;
+$menu-transition:                   color .15s ease-in-out, border-color .15s !default;
+
+//menu-item
+$menu-item-padding-x:               1rem !default;
+$menu-item-padding-y:               .5rem !default;
+$menu-item-active-color:            $primary !default;
+$menu-item-active-border-width:     2px !default;
+$menu-item-disabled-color:          $gray-600 !default;

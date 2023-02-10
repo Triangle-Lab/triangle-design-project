@@ -7,6 +7,9 @@
 // mixins
 @import './mixin';
 
+//animation
+@import './animation';
+
 // button
 @import '../components/Button/style';
 
@@ -27,3 +30,13 @@
 
 // Dropdown
 @import '../components/Dropdown/style';
+
+//menu
+@import '../components/Menu/style';
+
+//icon
+@import '../components/Icon/style';
+
+//autocomplete
+@import '../components/AutoComplete/style'
+
