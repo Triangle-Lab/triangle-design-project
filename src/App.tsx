@@ -2,6 +2,8 @@ import React from 'react'
 import Alert, { AlertType } from './components/Alert/alert'
 import Button, { ButtonSize, ButtonType } from './components/Button/button'
 import Drawer, { DrawerPosition } from './components/Drawer/drawer'
+import Dropdown from './components/Dropdown/dropdown'
+import Calendar from './components/Calendar/calendar'
 function App (): JSX.Element {
   const [show, setShow] = React.useState(true)
   return (
@@ -21,6 +23,14 @@ function App (): JSX.Element {
       <Drawer title="抽屉" isShow={show} onClose={() => { setShow(false) }} position={DrawerPosition.Left} width={300} close={false} mask={true} maskClosable={true}>
         <div>抽屉内容</div>
       </Drawer>
+      <Dropdown droplist={[<div key="1">option1</div>, <div key="2">option2</div>, <div key="3">option3</div>]}>
+        <Button btnType={ButtonType.Primary}>开始</Button>
+      </Dropdown>
+      <Calendar
+        defaultValue='2020-04-01'
+        style={{ marginTop: '50px' }}
+        onChange={(date) => { console.log(date) }}
+      />
     </div>
   )
 }
