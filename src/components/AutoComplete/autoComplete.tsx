@@ -1,9 +1,11 @@
-import React, { FC, useState, ChangeEvent,KeyboardEvent, ReactElement, useEffect, useRef } from "react";
-import  { Input,InputProps } from "../Input/input";
-import Icon from "../Icon/icon";
-import useDebounce from "../../hooks/useDebounce";
-import classNames from "classnames";
-import useClickOutside from "../../hooks/useClickOutside";
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import React, { FC, useState, ChangeEvent, KeyboardEvent, ReactElement, useEffect, useRef } from 'react'
+import { Input, InputProps } from '../Input/input'
+import Icon from '../Icon/icon'
+import useDebounce from '../../hooks/useDebounce'
+import classNames from 'classnames'
+import useClickOutside from '../../hooks/useClickOutside'
 
 interface DataSourceObject {
   value: string
@@ -25,17 +27,17 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     ...restProps
   } = props
 
-  const [ inputValue, setInputValue] = useState(value as string)
-  const [ suggestions, setSugestions ] = useState<DataSourceType[]>([])
-  const [ loading, setLoading ] = useState(false)
-  const [ highlightIndex, setHighlightIndex] = useState(-1)
+  const [inputValue, setInputValue] = useState(value as string)
+  const [suggestions, setSugestions] = useState<DataSourceType[]>([])
+  const [loading, setLoading] = useState(false)
+  const [highlightIndex, setHighlightIndex] = useState(-1)
   const triggerSearch = useRef(false)
   const componentRef = useRef<HTMLDivElement>(null)
   const debouncedValue = useDebounce(inputValue, 500)
-  
+
   useClickOutside(componentRef, () => { setSugestions([]) })
   useEffect(() => {
-    if (debouncedValue && triggerSearch) {
+    if ((Boolean(debouncedValue)) && Boolean(triggerSearch)) {
       const results = fetchSuggestions(debouncedValue)
       if (results instanceof Promise) {
         console.log('triggered')
@@ -53,50 +55,50 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     setHighlightIndex(-1)
   }, [debouncedValue])
 
-  const highlight = (index: number) => {
-    if(index < 0) index = 0
-    if(index >= suggestions.length) {
+  const highlight = (index: number): void => {
+    if (index < 0) index = 0
+    if (index >= suggestions.length) {
       index = suggestions.length - 1
     }
     setHighlightIndex(index)
   }
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    switch(e.keyCode) {
-      case 13://enter
-        if(suggestions[highlightIndex]) {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>): void => {
+    switch (e.keyCode) {
+      case 13:// enter
+        if (suggestions[highlightIndex]) {
           handleSelect(suggestions[highlightIndex])
         }
-        break;
-      case 38://上
+        break
+      case 38:// 上
         highlight(highlightIndex - 1)
-        break;
-      case 40://下
+        break
+      case 40:// 下
         highlight(highlightIndex + 1)
-        break;
-      case 27://esc
+        break
+      case 27:// esc
         setSugestions([])
-        break;
+        break
       default:
-        break;
+        break
     }
   }
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value.trim()
     setInputValue(value)
     triggerSearch.current = true
   }
-  const handleSelect = (item:DataSourceType) => {
+  const handleSelect = (item: DataSourceType): void => {
     setInputValue(item.value)
     setSugestions([])
-    if (onSelect) {
+    if (onSelect != null) {
       onSelect(item)
     }
     triggerSearch.current = false
   }
-  const renderTemplate = (item: DataSourceType) => {
-    return renderOption ? renderOption(item) : item.value
+  const renderTemplate = (item: DataSourceType): any => {
+    return (renderOption != null) ? renderOption(item) : item.value
   }
-  const generateDropdown = () => {
+  const generateDropdown = (): JSX.Element => {
     return (
       <ul>
         { suggestions.map((item, index) => {
@@ -104,7 +106,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
             'item-highlihted': index === highlightIndex
           })
           return (
-            <li key = { index } className = { cnames } onClick = { () => handleSelect(item) }>
+            <li key = { index } className = { cnames } onClick = { () => { handleSelect(item) } }>
               <>
               { renderTemplate(item) }
               </>
