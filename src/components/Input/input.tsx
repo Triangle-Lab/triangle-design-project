@@ -1,10 +1,11 @@
-import React, { ChangeEvent, FC, InputHTMLAttributes, ReactElement } from "react";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import classNames from "classnames";
-import Icon from "../Icon/icon";
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import React, { ChangeEvent, FC, InputHTMLAttributes, ReactElement } from 'react'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import classNames from 'classnames'
+import Icon from '../Icon/icon'
 
 type InputSize = 'lg' | 'sm'
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'>{
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   // 是否禁用input
   disable?: boolean
   // 设置input大小，支持lg或者sm
@@ -15,7 +16,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
   prepand?: string | ReactElement
   // 添加后缀，用于配置一些固定组合
   append?: string | ReactElement
-  onChange?: (e:ChangeEvent<HTMLInputElement>) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input: FC<InputProps> = (props) => {
@@ -33,24 +34,26 @@ export const Input: FC<InputProps> = (props) => {
   const cnames = classNames('viking-input-wrapper', {
     [`input-size-${size}`]: size,
     'is-disabled': disabled,
-    'input-group': prepand || append,
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    'input-group': prepand ?? append,
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     'input-group-append': !!append
   })
-  const fixControlledValue = (value: any) => {
-    if(typeof value === 'undefined' || value === null) {
-        return ''
+  const fixControlledValue = (value: any): any => {
+    if (typeof value === 'undefined' || value === null) {
+      return ''
     }
     return value
   }
-  if('value' in props) {
+  if ('value' in props) {
     delete restProps.defaultValue
-    restProps.value = fixControlledValue(props.value) 
+    restProps.value = fixControlledValue(props.value)
   }
   return (
     // 判断是否要添加特定的节点
     <div className = { cnames } style = { style }>
       {prepand && <div className="viking-input-group-prepend">{prepand}</div>}
-      {icon && <div className= "icon-wrapper"><Icon icon = { icon } title = {`title`}/></div>}
+      {icon && <div className= "icon-wrapper"><Icon icon = { icon } title = {'title'}/></div>}
       <input
         className = "viking-input-inner"
         disabled = { disabled }

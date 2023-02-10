@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import React, { useState, createContext } from 'react'
 import classNames from 'classnames'
 import MenuItem, { MenuItemProps } from './menuItem'
@@ -30,20 +31,21 @@ const Menu: React.FC<MenuProps> = (props) => {
     'menu-horizontal': mode !== 'vertical'
   })
 
-  const handleClick = (index: string) => {
+  const handleClick = (index: string): void => {
     setActive(index)
-    if (onSelect) {
+    if (onSelect != null) {
       onSelect(index)
     }
   }
   const passedContext: IMenuContext = {
-    index: currentActive ? currentActive : '0',
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    index: currentActive || '0',
     onSelect: handleClick,
-    mode: mode,
+    mode,
     defaultOpenSubmenus
   }
 
-  const renderChildren = () => {
+  const renderChildren = (): any => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement <MenuItemProps>
       const { displayName } = childElement.type
