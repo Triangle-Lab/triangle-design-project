@@ -8,11 +8,13 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript'
   ],
+
+  ignorePatterns: ['docs'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './website/tsconfig.json'],
+    project: ['./tsconfig.json'],
     ecmaFeatures: {
       jsx: true
     }
@@ -25,4 +27,4 @@ module.exports = {
     'react/prop-types': 'off',
     semi: 'off'
   }
-};
+}

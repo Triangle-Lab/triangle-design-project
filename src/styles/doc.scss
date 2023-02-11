@@ -4,23 +4,35 @@
 // mixins
 @import './mixin';
 
+//animation
+@import './animation';
+
 // button
-@import '../components/Button/style';
+@import '../Button/style';
 
 // alert
-@import '../components/Alert/style';
+@import '../Alert/style';
 
 // avatar
-@import '../components/Avatar/style';
+@import '../Avatar/style';
 
 // breadcrumb
-@import '../components/Breadcrumb/style';
+@import '../Breadcrumb/style';
 
 // divider
-@import '../components/Divider/style';
+@import '../Divider/style';
 
 // Drawer
-@import '../components/Drawer/style';
+@import '../Drawer/style';
 
 // Dropdown
-@import '../components/Dropdown/style';
+@import '../Dropdown/style';
+
+//menu
+@import '../Menu/style';
+
+//icon
+@import '../Icon/style';
+
+//autocomplete
+@import '../AutoComplete/style'
