@@ -68,3 +68,19 @@ export default function App() {
   );
 };
 ```
+
+## API
+
+### Breadcrumb
+
+| 参数 | 说明 | 类型 | 默认值 |
+| :---: | :---: | :---: | :---: |
+| objects | 面包屑对象数组 | `BreadcrumbObjectsType[]` | - |
+| target | 跳转方式 | `_blank` \| `_self` | `_self` |
+
+### BreadcrumbObjectsType
+
+| 参数 | 说明 | 类型 | 默认值 |
+| :---: | :---: | :---: | :---: |
+| text | 面包屑文本 | `string` | - |
+| link | 面包屑链接 | `string` | - |

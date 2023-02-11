@@ -29,13 +29,13 @@ const styles = `
 
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: #057eff;
+    background-color: none;
     border-radius: 20px;
     transition: all 1s ease-in-out;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #057eff;
+    background-color: gray;
   }
 
   ::-webkit-scrollbar-corner {
