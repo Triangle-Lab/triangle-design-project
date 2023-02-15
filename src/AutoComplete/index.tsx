@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { type FC, useState, type ChangeEvent, type KeyboardEvent, type ReactElement, useEffect, useRef } from 'react'
-import { Input, type InputProps } from '../Input/input'
-import Icon from '../Icon/icon'
+import { Input, type InputProps } from '../Input'
+// import Icon from '../Icon'
 import useDebounce from '../hooks/useDebounce'
 import classNames from 'classnames'
 import useClickOutside from '../hooks/useClickOutside'
@@ -124,7 +124,10 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
         onKeyDown = { handleKeyDown }
         { ... restProps }
       />
-      { loading && <ul><Icon icon="spinner" spin/></ul>}
+      { loading &&
+      <ul>
+        {/* <Icon icon="spinner" spin/> */}
+      </ul>}
       { (suggestions.length > 0) && generateDropdown() }
     </div>
   )

@@ -2,8 +2,8 @@
 import React, { ChangeEvent, Children, FC, useRef, useState } from 'react'
 import axios from 'axios'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Button, { ButtonSize, ButtonType } from '../Button/button'
-import { Input } from '../Input/input'
+import Button, { ButtonSize, ButtonType } from '../Button'
+import { Input } from '../Input'
 import UploadList from './uploadList'
 import Dragger from './dragger'
 

@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { render, RenderResult, fireEvent, createEvent } from '@testing-library/react'
-import { UploadProps, Upload } from './upload'
+import { UploadProps, Upload } from '.'
 import axios from 'axios'
 
 // jest.mock('../Icon/icon', () => {
