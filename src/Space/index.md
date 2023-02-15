@@ -171,29 +171,6 @@ export default function App() {
   );
 }
 ```
-export enum SpaceingSize {
-  Small = 'small',
-  Medium = 'medium',
-  Large = 'large'
-}
-
-export enum Direction {
-  Horizontal = 'horizontal',
-  Vertical = 'vertical',
-}
-
-export enum Side {
-  Left = 'left',
-  Right = 'right',
-  Center = 'center'
-}
-
-interface BaseSpaceProps {
-  size?: SpaceingSize
-  wrap?: boolean
-  side?: Side
-  direction?: Direction
-}
 
 ## API
 
