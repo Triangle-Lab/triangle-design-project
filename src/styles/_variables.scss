@@ -325,3 +325,12 @@ $menu-item-padding-y:               .5rem !default;
 $menu-item-active-color:            $primary !default;
 $menu-item-active-border-width:     2px !default;
 $menu-item-disabled-color:          $gray-600 !default;
+
+//TreeSelect
+$tree-hover-border-color:           1px solid #dfdfdf !default;
+$tree-node-label-selected-color:    #ebf0ff !default;
+$tree-input-border:                 1px solid #b0b0b0 !default;
+$tree-input-border-color:           rgba(47, 83, 211, 0.75) !default;
+$tree-input-border-box-shadow:      0 0 3px rgba(47, 83, 211, 0.75) !default;
+$tree-input-block-bg:               rgb(233, 244, 255) !default;
+$tree-input-block-active:           rgb(219, 237, 255) !default;

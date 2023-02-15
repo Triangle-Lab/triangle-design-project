@@ -7,3 +7,6 @@ export { default as Breadcrumb, type BreadcrumbObjectsType } from './Breadcrumb'
 export { default as Divider, DividerStyle } from './Divider'
 export { default as Drawer, DrawerPosition } from './Drawer'
 export { default as Dropdown } from './Dropdown'
+export { default as Space, SpaceingSize, Direction, Side} from './Space'
+export { default as TreeSelect } from './TreeSelect'
+
