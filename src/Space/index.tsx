@@ -39,10 +39,19 @@ const Space: React.FC<SpaceProps> = (props) => {
   const itemClasses = classNames('Space-item', {
     [`Space-${size}`]: size
   })
+  const fitstItemClasses = classNames('Space-item-first', {
+    [`Space-first-${size}`]: size && direction === Direction.Horizontal,
+    [`Space-${size}`]: size && direction === Direction.Vertical
+  })
   return (
     <div className={classes} {...restProps}>
-      {React.Children.map(children, (child) => (
+      {React.Children.map(children, (child,index) => (
+        //第一个不添加margin
+        index === 0 ? (
+        <div className={fitstItemClasses}>{child}</div>
+        ) : (
         <div className={itemClasses}>{child}</div>
+        )
       ))}
     </div>
   )
