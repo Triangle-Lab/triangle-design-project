@@ -2,7 +2,7 @@
 import React, { type ChangeEvent, type FC, type InputHTMLAttributes, type ReactElement } from 'react'
 import { type IconProp } from '@fortawesome/fontawesome-svg-core'
 import classNames from 'classnames'
-// import Icon from '../Icon'
+import Icon from '../Icon'
 
 type InputSize = 'lg' | 'sm'
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
@@ -56,7 +56,7 @@ export const Input: FC<InputProps> = (props) => {
       {prepand && <div className="viking-input-group-prepend">{prepand}</div>}
       {icon &&
         <div className= "icon-wrapper">
-          {/* <Icon icon = { icon } title = {'title'}/> */}
+          <Icon icon = { icon } title = {'title'}/>
         </div>}
       <input
         className = "viking-input-inner"

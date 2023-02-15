@@ -32,14 +32,16 @@ $light:$gray-100 !default;
 $dark:$gray-800 !default;
 $primary-light:#0485fe29 !default;
 
-$theme-colors: ("primary": $primary,
+$theme-colors: (
+  "primary": $primary,
   "secondary": $secondary,
   "success": $success,
   "info": $info,
   "warning": $warning,
   "danger": $danger,
   "light": $light,
-  "dark": $dark);
+  "dark": $dark,
+  "primary-light": $primary-light);
 
 $font-family-sans-serif:-apple-system,
 BlinkMacSystemFont,
