@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent, render, type RenderResult, cleanup } from '@testing-library/react'
-import Menu, { type MenuProps } from './menu'
+import Menu, { type MenuProps } from '.'
 import MenuItem from './menuItem'
 import SubMenu from './subMenu'
 import '@testing-library/jest-dom'
