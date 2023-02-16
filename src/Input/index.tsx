@@ -2,12 +2,12 @@
 import React, { type ChangeEvent, type FC, type InputHTMLAttributes, type ReactElement } from 'react'
 import { type IconProp } from '@fortawesome/fontawesome-svg-core'
 import classNames from 'classnames'
-import Icon from '../Icon/icon'
+import Icon from '../Icon'
 
 type InputSize = 'lg' | 'sm'
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   // 是否禁用input
-  disable?: boolean
+  disabled?: boolean
   // 设置input大小，支持lg或者sm
   size?: InputSize
   // 添加图标，在右侧悬浮添加一个图标，用于提示
@@ -37,7 +37,8 @@ export const Input: FC<InputProps> = (props) => {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     'input-group': prepand ?? append,
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    'input-group-append': !!append
+    'input-group-append': !!append,
+    'input-group-prepand': !!prepand
   })
   const fixControlledValue = (value: any): any => {
     if (typeof value === 'undefined' || value === null) {
@@ -53,7 +54,10 @@ export const Input: FC<InputProps> = (props) => {
     // 判断是否要添加特定的节点
     <div className = { cnames } style = { style }>
       {prepand && <div className="viking-input-group-prepend">{prepand}</div>}
-      {icon && <div className= "icon-wrapper"><Icon icon = { icon } title = {'title'}/></div>}
+      {icon &&
+        <div className= "icon-wrapper">
+          <Icon icon = { icon } title = {'title'}/>
+        </div>}
       <input
         className = "viking-input-inner"
         disabled = { disabled }

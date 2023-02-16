@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import Input, { type InputProps } from './input'
+import Input, { type InputProps } from '.'
 import '@testing-library/jest-dom'
 
 const defaultProps: InputProps = {

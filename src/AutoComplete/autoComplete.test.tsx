@@ -1,7 +1,7 @@
 import React from 'react'
 import { config } from 'react-transition-group'
 import { render, type RenderResult, fireEvent } from '@testing-library/react'
-import { type AutoCompleteProps, AutoComplete } from './autoComplete'
+import { type AutoCompleteProps, AutoComplete } from '.'
 import '@testing-library/jest-dom'
 
 config.disabled = true
