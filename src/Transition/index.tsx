@@ -21,10 +21,10 @@ const Transition: React.FC<TransitionProps> = (props) => {
   return (
     <CSSTransition
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    classNames = { classNames ?? animation}
-    { ...restProps }
+      classNames = { classNames ?? animation}
+      { ...restProps }
     >
-    {(wrapper ?? false) ? <div>children</div> : children}
+      {(wrapper ?? false) ? <div>children</div> : children}
     </CSSTransition>
   )
 }

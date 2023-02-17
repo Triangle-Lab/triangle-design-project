@@ -98,7 +98,8 @@ export default function App() {
 
 ### 添加图标
 
-支持https://fontawesome.com所提供的所有icon图标
+支持https://fontawesome.com
+所提供的所有icon图标
 
 ```jsx
 import React, {useState} from 'react'
@@ -124,6 +125,7 @@ export default function App() {
 | 参数 | 说明 | 可用值 | 默认值 |
 | :---: | :----: | :---: | :---: |
 | disable | 是否禁用input | `boolean` | `flase` |
+| placeholder| 默认值 | `string` | - |
 | size | 输入框大小 | `lg` `sm` | `sm` |
 | icon | 添加图标，在右侧悬浮添加一个图标，用于提示 | `IconProp` | - |
 | prepand | 添加前缀，用于配置一些固定组合 | `string` | - |
