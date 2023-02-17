@@ -264,10 +264,11 @@ $input-padding-x-lg: $btn-padding-x-lg !default;
 $input-font-size-lg: $btn-font-size-lg !default;
 
 $input-bg: $white !default;
-$input-disabled-bg: $gray-200 !default;
-$input-disabled-border-color: null !default;
+$input-disabled-bg: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3)) !default;
+$input-disabled-border-color: rgba(118, 118, 118, 0.3) !default;
 
 $input-color: $gray-700 !default;
+$input-disabled-color: $gray-600 !default;
 $input-border-color: $gray-400 !default;
 $input-border-width: $border-width !default;
 $input-box-shadow: $box-shadow-inset !default;
