@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { MenuContext } from '.'
 import { type MenuItemProps } from './menuItem'
 // import Icon from '../Icon/icon'
-import Transition from '../Transition/transition'
+import Transition from '../Transition'
 
 export interface subMenuProps {
   index?: string
