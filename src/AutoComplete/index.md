@@ -1,9 +1,18 @@
+---
+toc: content
+---
+
 # AutoComplete
 
-This is an example component.
+自动填充实现填充信息的提示和自动补全
 
 ```jsx
-import { Foo } from 'triangle-ui';
+import { AutoComplete } from 'triangle-ui';
 
-export default () => <Foo title="Hello dumi!" />
+export default () => {
+    <dev>
+      <AutoComplete>111</AutoComplete>
+    </dev>
+}
+
 ```

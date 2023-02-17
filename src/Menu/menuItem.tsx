@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from '.'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import Icon from '../Icon'
+library.add(fas)
 
 export interface MenuItemProps {
   index?: string
@@ -24,8 +28,9 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
   }
   return (
     <li className = {classes} style = {style} onClick= { handleClick }>
-    {children}
+      {children}
     </li>
+    
   )
 }
 

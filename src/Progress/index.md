@@ -17,7 +17,11 @@ import { Progress } from 'triangle-ui'
 export default function App() {
   return (
     <div>
-     <Progress/>
+     <Progress
+        percent = { 30 }
+        showText = "true"
+        theme = "primary"
+      />
     </div>
   );
 };

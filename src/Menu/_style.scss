@@ -2,15 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
     list-style: none;
-    border-bottom: $menu-border-width solid $menu-border-color;
     box-shadow: $menu-box-shadow;
     .menu-item{
         padding: $menu-item-padding-y $menu-item-padding-x;
         cursor: pointer;
         transition: $menu-transition;
-        &:hover, &focus{
+        &:hover, &:focus{
             text-decoration: none;
         }
         &.is-disabled{
@@ -18,7 +17,7 @@
             pointer-events: none;
             cursor: default;
         }
-        &is-active, &hover{
+        &.is-active, &:hover{
             color: $menu-item-active-color;
             border-bottom: $menu-border-width solid $menu-border-color;
         }
@@ -53,12 +52,12 @@
 }
 .viking-submenu{
     opacity: 0;
-    //display: none;
+    display: none;
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
-    transition: opacity .5s ease;
-    //transition: $menu-transition;
+    // transition: opacity .5s ease-in-out;
+    transition: $menu-transition;
     .menu-item{
         padding: $menu-item-padding-y $menu-item-padding-x;
         cursor: pointer;
@@ -70,18 +69,17 @@
     }
 }
 .viking-submenu.menu-opened{
-    //display: block;
+    display: block;
     opacity: 1;
 }
 
 .menu-vertical{
     flex-direction: column;
-    border-bottom: 0px;
-    margin: 10px 20px;
-    border-right: $menu-border-width solid $menu-border-color;
+    margin: 10px 10px 0 10px;
+    border-right: $menu-border-width solid $gray-300;
     .menu-item{
         border-left: $menu-border-width solid transparent;
-        &is-active, &hover{
+        &.is-active, &:hover{
             border-bottom: 0px;
             border-left: $menu-border-width solid $menu-border-color;
         }

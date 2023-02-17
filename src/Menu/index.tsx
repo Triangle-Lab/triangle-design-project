@@ -2,6 +2,9 @@
 import React, { useState, createContext } from 'react'
 import classNames from 'classnames'
 import MenuItem, { type MenuItemProps } from './menuItem'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 type MenuMode = 'horizontal' | 'vertical'
 type SelectCallback = (SelectedIndex: string) => void
@@ -47,7 +50,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   const renderChildren = (): any => {
     return React.Children.map(children, (child, index) => {
-      const childElement = child as React.FunctionComponentElement <MenuItemProps>
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>
       const { displayName } = childElement.type
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         return React.cloneElement(childElement, {

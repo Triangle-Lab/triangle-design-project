@@ -1,10 +1,13 @@
 import React, { useState, useContext, type FunctionComponentElement } from 'react'
 import classNames from 'classnames'
-// import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 import { MenuContext } from '.'
 import { type MenuItemProps } from './menuItem'
-// import Icon from '../Icon/icon'
-import Transition from '../Transition/transition'
+import Icon from '../Icon'
+import Transition from '../Transition'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 export interface subMenuProps {
   index?: string
@@ -65,15 +68,15 @@ const SubMenu: React.FC<subMenuProps> = ({ index, title, children, className }) 
       }
     })
     return (
-      <Transition
-        in = { menuOpen }
-        timeout = { 300 }
-        animation = 'zoom-in-top'
-      >
+      // <Transition
+      //   in = { menuOpen }
+      //   timeout = { 300 }
+      //   animation = 'zoom-in-top'
+      // >
         <ul className= { subMenuClasses } >
             { childrenCompopent }
         </ul>
-      </Transition>
+      // </Transition>
     )
   }
 
@@ -81,11 +84,12 @@ const SubMenu: React.FC<subMenuProps> = ({ index, title, children, className }) 
     <li key = { index } className = { classes } { ...hoverEvents}>
         <div className = 'submenu-title' { ...clickEvent}>
             { title }
+            <Icon icon = 'angle-down' className = 'arrow-icon'/>
         </div>
         { renderChildren() }
     </li>
   )
 }
 
-SubMenu.displayName = 'subMenu'
+SubMenu.displayName = 'SubMenu'
 export default SubMenu
