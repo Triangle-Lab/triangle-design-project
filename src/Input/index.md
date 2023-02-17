@@ -10,14 +10,21 @@ toc: content
 
 ### 默认
 
+一个简单的输入框，支持 `HTMLInput` 的所有基本属性。
+
 ```jsx
-import React from 'react'
+import React, {useState} from 'react'
 import { Input } from 'triangle-ui'
 
 export default function App() {
+  const [value,setValue] = useState('')
   return (
     <div>
-      <Input/>
+      <Input  
+        placeholder ="请输入" 
+        size = 'sm' 
+        onChange={(e) => {setValue(e.target.value)}}  
+        />
     </div>
   );
 };
@@ -25,6 +32,8 @@ export default function App() {
 
 ### 禁用
 
+可以设置 `disabled` 属性禁用输入框。
+
 ```jsx
 import React from 'react'
 import { Input } from 'triangle-ui'
@@ -32,7 +41,7 @@ import { Input } from 'triangle-ui'
 export default function App() {
   return (
     <div>
-      <Input disabled/>
+      <Input placeholder ="不能改动哦" disabled={true}/>
     </div>
   );
 };
@@ -40,6 +49,8 @@ export default function App() {
 
 ### 大小
 
+可以设置 `size` 属性改变输入框的大小。
+
 ```jsx
 import React from 'react'
 import { Input } from 'triangle-ui'
@@ -47,14 +58,24 @@ import { Input } from 'triangle-ui'
 export default function App() {
   return (
     <div>
-      <Input style={{marginLeft:"1rem",marginTop:".1rem"}} size = 'lg'/>
-      <Input style={{marginLeft:"1rem",marginTop:".1rem"}} size = 'sm'/>
+      <Input 
+        style={{marginLeft:"1rem",marginTop:"1rem"}} 
+        size = 'lg'
+        placeholder ="我是大号的"
+      />
+      <Input 
+        style={{marginLeft:"1rem",marginTop:"1rem"}} 
+        size = 'sm'
+        placeholder ="我是小号的"
+      />
     </div>
   );
 };
 ```
 
 ### 添加前后缀
+
+需要的时候可以添加前后缀，比如网址的前缀和后缀。
 
 ```jsx
 import React from 'react'
@@ -66,7 +87,9 @@ export default function App() {
       <Input
         style={{marginLeft:"1rem",marginTop:".1rem"}} 
         prepand = 'http://'
+        placeholder ="请输入网址"
         append = '.com'
+        size = 'lg'
       />
     </div>
   );
@@ -74,6 +97,27 @@ export default function App() {
 ```
 
 ### 添加图标
+
+支持https://fontawesome.com所提供的所有icon图标
+
+```jsx
+import React, {useState} from 'react'
+import { Input } from 'triangle-ui'
+
+export default function App() {
+  const [value,setValue] = useState('')
+  return (
+    <div>
+      <Input 
+        icon='arrow-right' 
+        placeholder ="请输入" 
+        size = 'sm' 
+        onChange={(e) => {setValue(e.target.value)}}  
+        />
+    </div>
+  );
+};
+```
 
 ## API
 

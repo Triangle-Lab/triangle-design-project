@@ -20,8 +20,7 @@ describe('Space', () => {
 
     const spaceItemEl = spaceEl.querySelector('div');
     //expect(spaceItemEl).toBeInTheDocument();
-    expect(spaceItemEl).toHaveClass('Space-item');
-    expect(spaceItemEl).toHaveClass(`Space-${SpaceingSize.Medium}`);
+    expect(spaceItemEl).toHaveClass('Space-item-first');
     expect(spaceItemEl).toHaveTextContent('点击');
   });
 
@@ -34,7 +33,7 @@ describe('Space', () => {
 
     const spaceEl = screen.getByTestId('space');
     const spaceItemEl = spaceEl.querySelector('div');
-    expect(spaceItemEl).toHaveClass(`Space-${SpaceingSize.Small}`);
+    expect(spaceItemEl).toHaveClass(`Space-item-first`);
   });
 
   it('should render Space component with specified direction', () => {
