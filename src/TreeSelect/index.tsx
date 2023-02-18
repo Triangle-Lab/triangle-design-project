@@ -80,13 +80,11 @@ function TreeSelect<T>(props: TreeSelectProps<T>) {
     if (inputRef.current && dropDownRef.current) {
       const { width } = inputRef.current.getBoundingClientRect();
       if (dropDownPosition === 'leftBottom') {
-        console.log('left');
         return `${-width}px`; 
       }
       if (dropDownPosition === 'rightBottom') {
         return `${width}px`;
       }
-      console.log(dropDownPosition);
       return '0px';
     }
   };
