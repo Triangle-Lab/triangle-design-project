@@ -1,13 +1,14 @@
 .viking-progress-bar {
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 10px;
     .viking-progress-bar-outer {
         border-radius: $progress-border-radius;
         background-color: $progress-bg;
         overflow: hidden;
         position: relative;
     }
-    .viking-bar-inner {
+    .viking-progress-bar-inner {
         position: absolute;
         left: 0;
         top: 0;
@@ -25,6 +26,7 @@
         }
     }
 }
+
 @each $key, $val in $theme-colors {
     .color-#{$key} {
         background-color: $val;

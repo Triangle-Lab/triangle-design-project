@@ -158,4 +158,4 @@ export default function App() {
 | onSelect | 选择事件 | `SelectCallback` | - |
 
 
-以及所有原生的 `Menu` 元素的属性,使用`style`支持自定义`Menu`的颜色尺寸信息。
+以及所有原生的 `menu` 元素的属性,使用`style`支持自定义`Menu`的颜色尺寸信息。

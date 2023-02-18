@@ -179,5 +179,5 @@ export default function App() {
 | timeout | 延迟时间 | `number` | - |
 | in | 过渡中包含的事件 | `React.Dispatch<React.SetStateAction>` | - |
 
-以及所有原生的 `Transition` 元素的属性。
+以及所有原生的 `transition` 元素的属性。
 
