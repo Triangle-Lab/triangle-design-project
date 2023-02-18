@@ -4,17 +4,52 @@
 // mixins
 @import './mixin';
 
+//animation
+@import './animation';
+
 // button
-@import '../components/Button/style';
+@import '../Button/style';
 
 // alert
-@import '../components/Alert/style';
+@import '../Alert/style';
 
 // avatar
-@import '../components/Avatar/style';
+@import '../Avatar/style';
 
 // breadcrumb
-@import '../components/Breadcrumb/style';
+@import '../Breadcrumb/style';
 
 // divider
-@import '../components/Divider/style';
+@import '../Divider/style';
+
+// Drawer
+@import '../Drawer/style';
+
+// Dropdown
+@import '../Dropdown/style';
+
+// menu
+@import '../Menu/style';
+
+// icon
+@import '../Icon/style';
+
+//autocomplete
+@import '../AutoComplete/style';
+
+//space
+@import '../Space/style';
+
+//treeselect
+@import '../TreeSelect/style';
+
+//input
+@import '../Input/style';
+// Switch
+@import '../Switch/style';
+
+// DatePicker
+@import '../DatePicker/style';
+
+// TimePicker
+@import '../TimePicker/style';

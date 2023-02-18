@@ -3,13 +3,12 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": [
+    "axe/forms": [
       "default",
       {
-        "ignore": [
-          "-webkit-text-size-adjust"
-        ]
+        "label": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }

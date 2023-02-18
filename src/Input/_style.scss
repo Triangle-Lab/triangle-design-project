@@ -1,0 +1,86 @@
+.input-wrapper {
+  display: flex;
+  //width: 100%;
+  position: relative;
+
+  .icon-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 35px;
+    justify-content: center;
+    color: $input-color;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    svg {
+      color: $input-placeholder-color;
+    }
+  }
+}
+
+.input-size-lg {
+    width: 300px;
+}
+
+.input-size-sm {
+  width: 200px;
+}
+
+.input-group {
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  background-color: #f5f5f5;
+}
+
+.is-disabled {
+  background-color: $input-disabled-bg;
+  color: $input-disabled-color;
+  cursor: not-allowed;
+  border-color: $input-disabled-border-color;
+}
+
+.icon-wrapper + .input-inner {
+  padding-right: 35px;
+}
+
+.input-inner {
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  line-height: $input-line-height;
+  background-clip: padding-box;
+  border-radius: $input-border-radius;
+
+  .is-alive {
+    color: $input-color;
+    background-color: $input-bg;
+    border: $input-border-width solid $input-border-color;
+  }
+}
+
+.input-group-prepend {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #d9d9d9;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  background-color: #f5f5f5;
+}
+
+.input-group-append {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #d9d9d9;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #f5f5f5;
+}

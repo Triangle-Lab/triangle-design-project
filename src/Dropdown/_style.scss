@@ -1,0 +1,39 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-child {
+  padding: 1px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 1;
+  margin-top: .2rem;
+  top: 100%;
+  left: 0;
+  border: #e8e8e8 solid 1px;
+  border-radius: $border-radius;
+  background-color: #fff;
+  @include bounce;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  // 点击时绽放效果
+  &:active {
+    transform: scale(0.95);
+  }
+
+}

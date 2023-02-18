@@ -8,6 +8,8 @@ module.exports = {
     'plugin:react/recommended',
     'standard-with-typescript'
   ],
+
+  ignorePatterns: ['docs'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -25,4 +27,4 @@ module.exports = {
     'react/prop-types': 'off',
     semi: 'off'
   }
-};
+}
