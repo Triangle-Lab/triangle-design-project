@@ -1,9 +1,12 @@
 # DatePicker
 
-This is an example component.
-
 ```jsx
-import { Foo } from 'triangle-ui';
+import React from 'react'
+import { DatePicker } from 'triangle-ui'
 
-export default () => <Foo title="Hello dumi!" />
+export default function App() {
+  return (
+    <DatePicker />
+  );
+};
 ```

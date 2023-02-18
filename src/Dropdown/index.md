@@ -11,7 +11,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Dropdown, Button, ButtonType } from 'triangle-ui'
+import { Dropdown, Button, ButtonType } from 'triangle-ui' 
 
 export default function App() {
   return (

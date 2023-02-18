@@ -120,7 +120,6 @@ export default function App() {
 
 通过设置 `size` 来控制子元素之间的间距。使用 `wrap` 设置是否自动换行。
 
-
 ```tsx
 import React from 'react';
 import { Button, ButtonType } from 'triangle-ui';
@@ -180,4 +179,3 @@ export default function App() {
 | Direction | 子元素排列方向 | `enum` | `Horizontal` `Vertical` | `Direction.Horizontal` |
 | Side | 子元素对齐方式 | `enum` | `Left` `Right` `Center` | `Side.Left` |
 | wrap | 是否自动换行 | `boolean` | - | `false` |
-
