@@ -47,7 +47,7 @@ export default function App() {
         onRemove={handleRemove}
       >
         <Button btnType="primary" size="sm">
-          <Icon icon="upload" />
+          <Icon icon="upload"  style={{marginRight: "0.5rem"}}/>
           Click to upload
         </Button>
       </Upload>
@@ -95,7 +95,7 @@ export default function App() {
         onRemove={handleRemove}
       >
         <Button btnType="primary" size="sm">
-          <Icon icon="upload" />
+          <Icon icon="upload"  style={{marginRight: "0.5rem"}}/>
           Click to upload
         </Button>
       </Upload>
@@ -181,7 +181,7 @@ export default function App() {
     <div style={{ width: 400 + 'px' }}>
       <Upload action="https://reqres.in/api/users" defaultFileList={fileList}>
         <Button btnType="primary" size="sm">
-          <Icon icon="upload" />
+          <Icon icon="upload"  style={{marginRight: "0.5rem"}}/>
           Click to upload
         </Button>
       </Upload>
@@ -222,7 +222,7 @@ export default function App() {
         beforeUpload={beforeUpload}
       >
         <Button btnType="primary" size="sm">
-          <Icon icon="upload" />
+          <Icon icon="upload"  style={{marginRight: "0.5rem"}}/>
           Click to upload
         </Button>
       </Upload>
@@ -254,7 +254,7 @@ export default function App() {
         headers={headers}
       >
         <Button btnType="primary" size="sm">
-          <Icon icon="upload" />
+          <Icon icon="upload" style={{marginRight: "0.5rem"}}/>
           Click to upload
         </Button>
       </Upload>

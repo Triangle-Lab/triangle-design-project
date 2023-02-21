@@ -8,149 +8,132 @@ toc: content
 
 ## 使用示例
 
-### 默认
+### 水平菜单
+
+水平菜单，可点击选择菜单项，支持默认选中项
 
 ```jsx
-import React from 'react'
-import { Menu, MenuItem,  MenuContext, subMenu } from 'triangle-ui'
-import { Button, ButtonType, ButtonSize } from 'triangle-ui'
+import React, { useState } from 'react';
+import {Menu, MenuItem} from 'triangle-ui';
+
 export default function App() {
+  const [selected, setSelected] = useState('1');
+
+  const handleSelect = (index) => {
+    setSelected(index);
+  };
+
   return (
     <div>
-      <Menu>
-        <MenuItem>
-          菜单1
-        </MenuItem>
-        <MenuItem>
-          菜单2
-        </MenuItem>
-        <MenuItem>
-          菜单3
-        </MenuItem>
+      <Menu mode="horizontal" onSelect={handleSelect} defaultIndex="1">
+        <MenuItem index="1">Home</MenuItem>
+        <MenuItem index="2">About</MenuItem>
+        <MenuItem index="3">Contact</MenuItem>
       </Menu>
+      <p>You have selected item {selected}</p>
     </div>
   );
-};
+}
 ```
 
-### 竖式菜单
+### 二级菜单
+
+二级菜单，可点击选择菜单项，支持默认选中项
 
 ```jsx
-import React from 'react'
-import { Menu, MenuItem,  MenuContext, subMenu } from 'triangle-ui'
+import React, { useState } from 'react';
+import { Menu, MenuItem } from 'triangle-ui';
+import { SubMenu } from 'triangle-ui';
+
 export default function App() {
+  const [selected, setSelected] = useState('1');
+
+  const handleSelect = (index) => {
+    setSelected(index);
+  };
+
   return (
     <div>
-      <Menu
-        mode = "vertical"
-      >
-        <MenuItem>
-          菜单1
-        </MenuItem>
-        <MenuItem>
-          菜单2
-        </MenuItem>
-        <MenuItem>
-          菜单3
-        </MenuItem>
-      </Menu>
-    </div>
-  );
-};
-```
-
-### 禁用菜单
-
-```jsx
-import React from 'react'
-import { Menu, MenuItem,  MenuContext, subMenu } from 'triangle-ui'
-export default function App() {
-  return (
-    <div>
-      <Menu>
-        <MenuItem disabled >
-          菜单1
-        </MenuItem >
-        <MenuItem disabled>
-          菜单2
-        </MenuItem>
-        <MenuItem disabled>
-          菜单3
-        </MenuItem>
-      </Menu>
-    </div>
-  );
-};
-```
-
-### 下拉菜单
-
-横向菜单鼠标悬停出现下拉菜单，纵向菜单点击出现下拉菜单
-
-```jsx
-import React from 'react'
-import { Menu, MenuItem,  MenuContext, SubMenu } from 'triangle-ui'
-export default function App() {
-  return (
-    <div>
-      <Menu
-        mode = "horizontal"
-      >
-        <MenuItem>
-          菜单1
-        </MenuItem>
-        <SubMenu title = "下拉菜单">
-          <MenuItem>
-            下拉菜单1
-          </MenuItem>
-          <MenuItem>
-            下拉菜单2
-          </MenuItem>
-          <MenuItem>
-            下拉菜单3
-          </MenuItem>
+      <Menu mode="horizontal" onSelect={handleSelect} defaultIndex="1">
+        <MenuItem index="1">Home</MenuItem>
+        <SubMenu title="About" index="2">
+          <MenuItem index="2-1">Our Team</MenuItem>
+          <MenuItem index="2-2">Our Story</MenuItem>
         </SubMenu>
-        <MenuItem>
-          菜单2
-        </MenuItem>
+        <MenuItem index="3">Contact</MenuItem>
       </Menu>
-      <Menu
-        mode = "vertical"
-      >
-        <MenuItem>
-          菜单1
-        </MenuItem>
-        <SubMenu title = "下拉菜单">
-          <MenuItem>
-            下拉菜单1
-          </MenuItem>
-          <MenuItem>
-            下拉菜单2
-          </MenuItem>
-          <MenuItem>
-            下拉菜单3
-          </MenuItem>
+      <p>You have selected item {selected}</p>
+    </div>
+  );
+}
+```
+
+### 垂直菜单
+
+垂直菜单，可点击选择菜单项，并展开子菜单
+
+```jsx
+import React, { useState } from 'react';
+import { Menu, MenuItem } from 'triangle-ui';
+import { SubMenu } from 'triangle-ui';
+
+export default function App() {
+  const [selected, setSelected] = useState('1');
+  const [openSubmenus, setOpenSubmenus] = useState(['2']);
+
+  const handleSelect = (index) => {
+    setSelected(index);
+  };
+
+  const handleOpenSubmenu = (index) => {
+    setOpenSubmenus((prev) => {
+      const isSubmenuOpen = prev.includes(index);
+      return isSubmenuOpen ? prev.filter((i) => i !== index) : [...prev, index];
+    });
+  };
+
+  return (
+    <div style={{width: "300px"}}>
+      <Menu mode="vertical" defaultIndex="0" defaultOpenSubmenus={['2']}>
+        <MenuItem index="0">首页</MenuItem>
+        <MenuItem index="1">学习</MenuItem>
+        <SubMenu index="2" title="资源">
+          <MenuItem index="2-1">React</MenuItem>
+          <MenuItem index="2-2">Vue</MenuItem>
         </SubMenu>
-        <MenuItem>
-          菜单2
+        <MenuItem index="3">关于我们</MenuItem>
+      </Menu>
+    </div>
+  );
+}
+```
+
+### 禁用菜单项
+
+禁用菜单项，不可点击选择
+
+```jsx
+import React, { useState } from 'react';
+import { Menu, MenuItem } from 'triangle-ui';
+import { SubMenu } from 'triangle-ui';
+
+export default function App() {
+  return (
+    <div>
+      <h2>Example 3: Vertical Menu with Non-Clickable Items</h2>
+      <Menu mode="vertical"  defaultIndex="1">
+        <MenuItem index="1" disabled>
+          主页（正在建设中）
+        </MenuItem>
+        <MenuItem index="2">
+          关于
+        </MenuItem>
+        <MenuItem index="3">
+          与我们联系
         </MenuItem>
       </Menu>
     </div>
   );
-};
+}
 ```
 
-## API
-
-| 参数 | 说明 | 可用值 | 默认值 |
-| :---: | :----: | :---: | :---: |
-| mode | 菜单形式 | `vertical` <br/> `horizontal` | `horizontal` |
-| index | 菜单编号 | `string` | `0` |
-| title | 下拉菜单文字内容 | `string` | - |
-| disabled | 是否禁用 | `boolean` | `false` |
-| children | 按钮内容 | `ReactNode` | - |
-| className | 自定义类名 | `string` | - |
-| style | 自定义样式 | `CSSProperties` | - |
-| onSelect | 选择事件 | `SelectCallback` | - |
-
-以及所有原生的 `Menu` 元素的属性,使用`style`支持自定义`Menu`的颜色尺寸信息。

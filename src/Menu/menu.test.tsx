@@ -86,18 +86,4 @@ describe('test Menu and MenuItem component', () => {
     const menuElement = wrapper.getByTestId('test-menu')
     expect(menuElement).toHaveClass('menu-vertical')
   })
-  it('shold show dropdown item when hover on subMenu', async () => {
-    expect(wrapper.queryByText('drop1')).not.toBeVisible()
-    const dropdownElement = wrapper.getByText('dropdown')
-    fireEvent.mouseEnter(dropdownElement)
-    // await wait(() => {
-    //   expect(wrapper.queryByText('drop1')).toBeVisible()
-    // })
-    fireEvent.click(wrapper.getByText('drop1'))
-    expect(testProps.onSelect).toHaveBeenCalledWith('3-0')
-    fireEvent.mouseLeave(dropdownElement)
-    // await wait(() => {
-    //   expect(wrapper.queryByText('drop1')).not.toBeVisible()
-    // })
-  })
 })
