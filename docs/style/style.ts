@@ -48,7 +48,7 @@ const styles = `
 
   .dumi-default-content:not([data-no-sidebar]){
     box-shadow:none !important;
-    border:3px solid #057eff !important;
+    border:2px solid #057eff !important;
   }
 
   .dumi-default-sidebar{

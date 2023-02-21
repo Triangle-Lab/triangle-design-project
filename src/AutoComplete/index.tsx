@@ -103,15 +103,15 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   }
   const generateDropdown = (): JSX.Element => {
     return (
-      <ul className='ulclass' style={{width : width}}>
-        { suggestions.map((item, index) => {
+      <ul className='ulclass' style={{ width: width }}>
+        {suggestions.map((item, index) => {
           const cnames = classNames('suggestion-item', {
             'item-highlighted': index === highlightIndex
           })
           return (
-            <li key = { index } className = { cnames } onClick = { () => { handleSelect(item) } }>
+            <li key={index} className={cnames} onClick={() => { handleSelect(item) }}>
               <>
-              { renderTemplate(item) }
+                {renderTemplate(item)}
               </>
             </li>
           )
@@ -120,19 +120,19 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     )
   }
   return (
-    <div className = "viking-auto-compete" ref = {componentRef}>
+    <div className="triangle-auto-compete" ref={componentRef}>
       <Input
-        value = { inputValue }
-        onChange = { handleChange }
-        onKeyDown = { handleKeyDown }
-        size = { size }
-        { ... restProps }
+        value={inputValue}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        size={size}
+        {...restProps}
       />
-      { loading &&
-      <ul>
-        <Icon icon="spinner" spin/>
-      </ul>}
-      { (suggestions.length > 0) && generateDropdown() }
+      {loading &&
+        <ul>
+          <Icon icon="spinner" spin />
+        </ul>}
+      {(suggestions.length > 0) && generateDropdown()}
     </div>
   )
 }

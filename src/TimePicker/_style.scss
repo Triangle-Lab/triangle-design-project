@@ -1,0 +1,91 @@
+.timepicker {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: max-content;
+  width: 15rem;
+  border-radius: 0.5rem;
+  border: 1px solid $primary;
+  padding: 0.5rem;
+  transition: height 0.2s ease-in-out;
+}
+
+.timepicker-header {
+  width: 100%;
+  height: max-content;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timepicker-header-title {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timepicker-body {
+  width: 100%;
+  height: max-content;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  // 分成三列
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.timepicker-body-column-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  // 滚动视图
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.timepicker-body-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  // 滚动视图
+  overflow-y: scroll;
+  height: 10rem;
+  width: 100%;
+}
+
+.timepicker-body-column-item {
+  cursor: pointer;
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  // hover
+  &:hover {
+    color: $primary;
+    background-color: $gray-100;
+  }
+}
+
+.timepicker-footer {
+  width: 100%;
+  height: max-content;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

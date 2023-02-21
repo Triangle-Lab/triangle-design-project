@@ -10,13 +10,13 @@ export interface ProgressProps {
 const Progress: FC<ProgressProps> = (props) => {
   const { percent, strokeHeight, showText, theme } = props;
   return (
-    <div data-testid="progress" className="viking-progress-bar">
+    <div data-testid="progress" className="triangle-progress-bar">
       <div
-        className="viking-progress-bar-outer"
+        className="triangle-progress-bar-outer"
         style={{ height: `${strokeHeight}px` }}
       >
         <div
-          className={`viking-bar-inner color-${theme}`}
+          className={`triangle-bar-inner color-${theme}`}
           style={{ width: `${percent}%` }}
         >
           {showText ? (

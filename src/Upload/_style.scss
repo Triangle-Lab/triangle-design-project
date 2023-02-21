@@ -1,10 +1,10 @@
-.viking-upload-list {
+.triangle-upload-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.viking-uploader-dragger {
+.triangle-uploader-dragger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,9 +15,11 @@
   padding: 20px;
   width: 360px;
   height: 180px;
+
   &:hover {
     border: 1px dashed $primary;
   }
+
   &.is-dragover {
     border: 2px dashed $primary;
     background: rgba($primary, .2);
@@ -25,8 +27,8 @@
 }
 
 
-.viking-upload-list-item {
-  transition: all .5s cubic-bezier(.55,0,.1,1);
+.triangle-upload-list-item {
+  transition: all .5s cubic-bezier(.55, 0, .1, 1);
   font-size: 14px;
   line-height: 1.8;
   margin-top: 5px;
@@ -34,23 +36,29 @@
   border-radius: 4px;
   min-width: 200px;
   position: relative;
+
   &:first-child {
     margin-top: 10px;
   }
+
   .file-name {
     margin-left: 5px;
     margin-right: 40px;
+
     svg {
       margin-right: 5px;
       color: $gray-500;
     }
   }
+
   .file-name-error {
     color: $danger;
+
     svg {
       color: $danger;
     }
   }
+
   .file-status {
     display: block;
     position: absolute;
@@ -58,6 +66,7 @@
     top: 0;
     line-height: inherit;
   }
+
   .file-actions {
     display: none;
     position: absolute;
@@ -66,11 +75,14 @@
     line-height: inherit;
     cursor: pointer;
   }
+
   &:hover {
     background-color: $gray-200;
+
     .file-status {
       display: none;
     }
+
     .file-actions {
       display: block;
     }
