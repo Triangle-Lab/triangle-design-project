@@ -37,21 +37,21 @@ const SubMenu: React.FC<subMenuProps> = ({ index, title, children, className }) 
   }
   const clickEvent = context.mode === 'vertical'
     ? {
-        onClick: handleClick
-      }
+      onClick: handleClick
+    }
     : {}
   const hoverEvents = context.mode !== 'vertical'
     ? {
-        onMouseEnter: (e: React.MouseEvent) => {
-          handleMouse(e, true)
-        },
-        onMouseLeave: (e: React.MouseEvent) => {
-          handleMouse(e, false)
-        }
+      onMouseEnter: (e: React.MouseEvent) => {
+        handleMouse(e, true)
+      },
+      onMouseLeave: (e: React.MouseEvent) => {
+        handleMouse(e, false)
       }
+    }
     : {}
   const renderChildren = (): any => {
-    const subMenuClasses = classNames('viking-submenu', {
+    const subMenuClasses = classNames('triangle-submenu', {
       'menu-opened': menuOpen
     })
     const childrenCompopent = React.Children.map(children, (child, i) => {
@@ -66,23 +66,23 @@ const SubMenu: React.FC<subMenuProps> = ({ index, title, children, className }) 
     })
     return (
       <Transition
-        in = { menuOpen }
-        timeout = { 300 }
-        animation = 'zoom-in-top'
+        in={menuOpen}
+        timeout={300}
+        animation='zoom-in-top'
       >
-        <ul className= { subMenuClasses } >
-            { childrenCompopent }
+        <ul className={subMenuClasses} >
+          {childrenCompopent}
         </ul>
       </Transition>
     )
   }
 
   return (
-    <li key = { index } className = { classes } { ...hoverEvents}>
-        <div className = 'submenu-title' { ...clickEvent}>
-            { title }
-        </div>
-        { renderChildren() }
+    <li key={index} className={classes} {...hoverEvents}>
+      <div className='submenu-title' {...clickEvent}>
+        {title}
+      </div>
+      {renderChildren()}
     </li>
   )
 }

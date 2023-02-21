@@ -16,15 +16,15 @@ export interface UploadFile {
 export interface BaseUploadProps {
   action: string;
   defaultFileList?: UploadFile[];
-  beforeUpload? : (file: File) => boolean | Promise<File>;
+  beforeUpload?: (file: File) => boolean | Promise<File>;
   onProgress?: (percentage: number, file: File) => void;
   onSuccess?: (data: any, file: File) => void;
   onError?: (err: any, file: File) => void;
   onChange?: (file: File) => void;
   onRemove?: (file: UploadFile) => void;
-  headers?: {[key: string]: any };
+  headers?: { [key: string]: any };
   name?: string;
-  data?: {[key: string]: any };
+  data?: { [key: string]: any };
   withCredentials?: boolean;
   accept?: string;
   multiple?: boolean;
@@ -54,7 +54,7 @@ export const Upload: FC<UploadProps> = (props) => {
     drag,
   } = props
   const fileInput = useRef<HTMLInputElement>(null)
-  const [ fileList, setFileList ] = useState<UploadFile[]>(defaultFileList || [])
+  const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || [])
   const updateFileList = (updateFile: UploadFile, updateObj: Partial<UploadFile>) => {
     setFileList(prevList => {
       return prevList.map(file => {
@@ -73,7 +73,7 @@ export const Upload: FC<UploadProps> = (props) => {
   }
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
-    if(!files) {
+    if (!files) {
       return
     }
     uploadFiles(files)
@@ -126,7 +126,7 @@ export const Upload: FC<UploadProps> = (props) => {
         formData.append(key, data[key])
       })
     }
-    if(action === undefined) {
+    if (action === undefined) {
       console.error('action is undefined')
       return
     }
@@ -139,14 +139,14 @@ export const Upload: FC<UploadProps> = (props) => {
       onUploadProgress: (e) => {
         let percentage = Math.round((e.loaded * 100) / e.total) || 0;
         if (percentage < 100) {
-          updateFileList(_file, { percent: percentage, status: 'uploading'})
+          updateFileList(_file, { percent: percentage, status: 'uploading' })
           if (onProgress) {
             onProgress(percentage, file)
           }
         }
       }
     }).then(resp => {
-      updateFileList(_file, {status: 'success', response: resp.data})
+      updateFileList(_file, { status: 'success', response: resp.data })
       if (onSuccess) {
         onSuccess(resp.data, file)
       }
@@ -154,7 +154,7 @@ export const Upload: FC<UploadProps> = (props) => {
         onChange(file)
       }
     }).catch(err => {
-      updateFileList(_file, { status: 'error', error: err})
+      updateFileList(_file, { status: 'error', error: err })
       if (onError) {
         onError(err, file)
       }
@@ -165,21 +165,21 @@ export const Upload: FC<UploadProps> = (props) => {
   }
 
   return (
-    <div 
-      className="viking-upload-component"
+    <div
+      className="triangle-upload-component"
     >
-      <div className="viking-upload-input"
-        style={{display: 'inline-block'}}
+      <div className="triangle-upload-input"
+        style={{ display: 'inline-block' }}
         onClick={handleClick}>
-          {drag ? 
-            <Dragger onFile={(files) => {uploadFiles(files)}}>
-              {children}
-            </Dragger>:
-            children
-          }
+        {drag ?
+          <Dragger onFile={(files) => { uploadFiles(files) }}>
+            {children}
+          </Dragger> :
+          children
+        }
         <input
-          className="viking-file-input"
-          style={{display: 'none'}}
+          className="triangle-file-input"
+          style={{ display: 'none' }}
           ref={fileInput}
           onChange={handleFileChange}
           type="file"
@@ -188,7 +188,7 @@ export const Upload: FC<UploadProps> = (props) => {
         />
       </div>
 
-      <UploadList 
+      <UploadList
         fileList={fileList}
         onRemove={handleRemove}
       />

@@ -17,34 +17,34 @@ const testVerProps: MenuProps = {
 }
 const generateMenu = (props: MenuProps): JSX.Element => {
   return (
-        <Menu { ...props}>
-            <MenuItem>
-            active
-            </MenuItem>
-            <MenuItem>
-            disabled
-            </MenuItem>
-            <MenuItem>
-            xyz
-            </MenuItem>
-            <SubMenu title="dropdown">
-            <MenuItem>
-            drop1
-            </MenuItem>
-            <MenuItem>
-            drop2
-            </MenuItem>
-            </SubMenu>
-        </Menu>
+    <Menu {...props}>
+      <MenuItem>
+        active
+      </MenuItem>
+      <MenuItem>
+        disabled
+      </MenuItem>
+      <MenuItem>
+        xyz
+      </MenuItem>
+      <SubMenu title="dropdown">
+        <MenuItem>
+          drop1
+        </MenuItem>
+        <MenuItem>
+          drop2
+        </MenuItem>
+      </SubMenu>
+    </Menu>
 
   )
 }
 const createStyleFile = (): any => {
   const cssFile: string = `
-    .viking-submenu {
+    .triangle-submenu {
       display: none;
     }
-    .viking-submenu.menu-opened{
+    .triangle-submenu.menu-opened{
       display: block;
     }
     `
@@ -64,7 +64,7 @@ describe('test Menu and MenuItem component', () => {
   })
   it('should render correct Menu and MenuItem based on default props', () => {
     expect(menuElement).toBeInTheDocument()
-    expect(menuElement).toHaveClass('viking-menu test')
+    expect(menuElement).toHaveClass('triangle-menu test')
     // expect(menuElement.getElementsByTagName('li').length).toEqual(3)
     expect(menuElement.querySelectorAll(':scope > li').length).toEqual(4)
     expect(activeElement).toHaveClass('menu-item is-active')

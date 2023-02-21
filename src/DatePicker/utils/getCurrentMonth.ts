@@ -22,24 +22,27 @@ const getCurrentMonth = (props: currentMonthProps): dateType[] => {
   if (nextMonth === 13) {
     nextMonth = 1
   }
-  const lastMonthLastDay = new Date(year, lastMonth, 0)
-  const lastMonthLastDayDate = lastMonthLastDay.getDate()
-  const nextMonthFirstDay = new Date(year, nextMonth - 1, 1)
-  const nextMonthFirstDayDate = nextMonthFirstDay.getDate()
+  const lastMonthLastDay = new Date(year, lastMonth, 0) // last day of last month
+  const lastMonthLastDayDate = lastMonthLastDay.getDate() // last day of last month
+  const nextMonthFirstDay = new Date(year, nextMonth - 1, 1)  // first day of next month
+  const nextMonthFirstDayDate = nextMonthFirstDay.getDate() // first day of next month
 
   if (firstDayWeekDay > 0) {
+    // when first day is not Sunday
     for (let i = 0; i < firstDayWeekDay; i++) {
-      monthData.push({ date: lastMonthLastDayDate - i, isCurrentMonth: false })
+      monthData.push({ date: lastMonthLastDayDate - firstDayWeekDay + i + 1, isCurrentMonth: false })
     }
   }
   const currentMonthLastDay = new Date(year, month, 0)
   const currentMonthLastDayDate = currentMonthLastDay.getDate()
   for (let i = 1; i <= currentMonthLastDayDate; i++) {
+    // when first day is Sunday
     monthData.push({ date: i, isCurrentMonth: true })
   }
   const lastDayWeekDay = new Date(year, month - 1, currentMonthLastDayDate).getDay()
   if (lastDayWeekDay < 6) {
     for (let i = 0; i < 6 - lastDayWeekDay; i++) {
+      // when last day is not Saturday
       monthData.push({ date: nextMonthFirstDayDate + i, isCurrentMonth: false })
     }
   }

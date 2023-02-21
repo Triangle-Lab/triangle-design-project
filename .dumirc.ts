@@ -13,6 +13,7 @@ export default defineConfig({
     socialLinks: {
       github: 'https://github.com/Triangle-Lab/triangle-design-project',
     },
+    prefersColor: { default: 'light', switch: false }
   },
   styles: [styles],
   favicons: ['/logo.svg'],

@@ -1,3 +1,7 @@
+---
+toc: content
+---
+
 # Upload
 
 Upload 组件可以让用户上传文件。
@@ -278,8 +282,3 @@ export default function App() {
 | accept | 接受上传的文件类型 | string | - |
 | multiple | 是否支持多选文件 | boolean | false |
 | drag | 是否支持拖拽上传 | boolean | false |
-
-
-
-
-

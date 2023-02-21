@@ -20,11 +20,11 @@ const Icon: React.FC<IconProps> = (props) => {
     className,
     theme,
     ...resetProps } = props
-  const classes = classNames('viking-icon', className, {
+  const classes = classNames('triangle-icon', className, {
     [`icon-${theme}`]: theme
   })
   return (
-    <FontAwesomeIcon className= { classes } { ...resetProps } />
+    <FontAwesomeIcon className={classes} {...resetProps} />
   )
 }
 

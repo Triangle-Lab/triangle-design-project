@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Progress,{ ProgressProps } from './index';
+import Progress, { ProgressProps } from './index';
 import '@testing-library/jest-dom';
 
 describe('Progress component', () => {
@@ -30,7 +30,7 @@ describe('Progress component', () => {
 
     it('renders with custom stroke height', () => {
         const { container } = render(<Progress {...defaultProps} strokeHeight={20} />)
-        expect(container.querySelector('.viking-progress-bar-outer')?.getAttribute('style')).toBe('height: 20px;')
+        expect(container.querySelector('.triangle-progress-bar-outer')?.getAttribute('style')).toBe('height: 20px;')
     })
 
     it('renders without text', () => {

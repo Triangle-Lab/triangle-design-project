@@ -26,7 +26,7 @@ export const MenuContext = createContext<IMenuContext>({ index: '0' })
 const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, style, children, defaultIndex, onSelect, defaultOpenSubmenus } = props
   const [currentActive, setActive] = useState(defaultIndex)
-  const classes = classNames('viking-menu', className, {
+  const classes = classNames('triangle-menu', className, {
     'menu-vertical': mode === 'vertical',
     'menu-horizontal': mode !== 'vertical'
   })
@@ -47,7 +47,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   const renderChildren = (): any => {
     return React.Children.map(children, (child, index) => {
-      const childElement = child as React.FunctionComponentElement <MenuItemProps>
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>
       const { displayName } = childElement.type
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         return React.cloneElement(childElement, {
@@ -59,11 +59,11 @@ const Menu: React.FC<MenuProps> = (props) => {
     })
   }
   return (
-  <ul className={classes} style = {style} data-testid = "test-menu" >
-    <MenuContext.Provider value = {passedContext}>
-    { renderChildren() }
-    </MenuContext.Provider>
-  </ul>
+    <ul className={classes} style={style} data-testid="test-menu" >
+      <MenuContext.Provider value={passedContext}>
+        {renderChildren()}
+      </MenuContext.Provider>
+    </ul>
   )
 }
 

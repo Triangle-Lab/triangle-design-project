@@ -10,14 +10,14 @@ export type DraggerProps = Partial<NativeDraggerProps>
 
 export const Dragger: FC<DraggerProps> = (props) => {
   const { onFile, children } = props
-  const [ dragOver, setDragOver ] = useState(false)
-  const klass = classNames('viking-uploader-dragger', {
+  const [dragOver, setDragOver] = useState(false)
+  const klass = classNames('triangle-uploader-dragger', {
     'is-dragover': dragOver
   })
   const handleDrop = (e: DragEvent<HTMLElement>) => {
     e.preventDefault()
     setDragOver(false)
-    if(!onFile) return
+    if (!onFile) return
     onFile(e.dataTransfer.files)
   }
   const handleDrag = (e: DragEvent<HTMLElement>, over: boolean) => {
@@ -25,10 +25,10 @@ export const Dragger: FC<DraggerProps> = (props) => {
     setDragOver(over)
   }
   return (
-    <div 
+    <div
       className={klass}
-      onDragOver={e => { handleDrag(e, true)}}
-      onDragLeave={e => { handleDrag(e, false)}}
+      onDragOver={e => { handleDrag(e, true) }}
+      onDragLeave={e => { handleDrag(e, false) }}
       onDrop={handleDrop}
     >
       {children}
