@@ -1,4 +1,6 @@
 ---
+group:
+  title: 通用
 toc: content
 ---
 # Dropdown
@@ -11,7 +13,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Dropdown, Button, ButtonType } from 'triangle-ui' 
+import { Dropdown, Button, ButtonType } from 'triangle-ui-react' 
 
 export default function App() {
   return (

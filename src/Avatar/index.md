@@ -1,4 +1,6 @@
 ---
+group:
+  title: 导航
 toc: content
 ---
 
@@ -14,7 +16,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Avatar } from 'triangle-ui'
+import { Avatar } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -32,7 +34,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Avatar } from 'triangle-ui'
+import { Avatar } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -50,7 +52,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Avatar, AvatarType } from 'triangle-ui'
+import { Avatar, AvatarType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -71,7 +73,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Avatar, AvatarType, AvatarSize } from 'triangle-ui'
+import { Avatar, AvatarType, AvatarSize } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -90,7 +92,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Avatar, AvatarType, AvatarSize } from 'triangle-ui'
+import { Avatar, AvatarType, AvatarSize } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -105,7 +107,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Avatar, AvatarType, AvatarSize } from 'triangle-ui'
+import { Avatar, AvatarType, AvatarSize } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (

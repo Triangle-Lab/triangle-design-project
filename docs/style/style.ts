@@ -29,13 +29,15 @@ const styles = `
 
   ::-webkit-scrollbar-thumb {
     cursor: pointer;
-    background-color: none;
+    background-color: #E0E0E0;
+    opacity: 0.2;
     border-radius: 20px;
     transition: all 1s ease-in-out;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: gray;
+    background-color: #3399FF;
+    opacity: 1;
   }
 
   ::-webkit-scrollbar-corner {
@@ -48,7 +50,7 @@ const styles = `
 
   .dumi-default-content:not([data-no-sidebar]){
     box-shadow:none !important;
-    border:2px solid #057eff !important;
+    border:1px solid #057eff !important;
   }
 
   .dumi-default-sidebar{
@@ -78,7 +80,13 @@ const styles = `
   }
 
   .markdown h1{
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 3rem !important;
     color: #057eff !important;
+  }
+
+  .dumi-default-sidebar > dl > dd > a{
+    font-family:"Microsoft Yahei" !important;
   }
 `
 

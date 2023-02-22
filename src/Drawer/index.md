@@ -1,4 +1,6 @@
 ---
+group:
+  title: 通用
 toc: content
 ---
 # Drawer
@@ -13,8 +15,8 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Drawer, DrawerPosition } from 'triangle-ui'
-import  { Button, ButtonType } from 'triangle-ui'
+import { Drawer, DrawerPosition } from 'triangle-ui-react'
+import  { Button, ButtonType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   const [left, setLeft] = React.useState(false)
@@ -53,8 +55,8 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Drawer, DrawerPosition } from 'triangle-ui'
-import  { Button, ButtonType } from 'triangle-ui'
+import { Drawer, DrawerPosition } from 'triangle-ui-react'
+import  { Button, ButtonType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   const [visible, setVisible] = React.useState(false)
@@ -81,8 +83,8 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Drawer, DrawerPosition } from 'triangle-ui'
-import  { Button, ButtonType } from 'triangle-ui'
+import { Drawer, DrawerPosition } from 'triangle-ui-react'
+import  { Button, ButtonType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   const [noMask, setNoMask] = React.useState(false)
@@ -114,8 +116,8 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Drawer, DrawerPosition } from 'triangle-ui'
-import  { Button, ButtonType } from 'triangle-ui'
+import { Drawer, DrawerPosition } from 'triangle-ui-react'
+import  { Button, ButtonType } from 'triangle-ui-react'
 
 export default function Home (): JSX.Element {
   const [visible1, setVisible1] = React.useState(false)

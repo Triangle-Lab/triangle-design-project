@@ -1,4 +1,6 @@
 ---
+group:
+  title: 图标
 toc: content
 ---
 
@@ -12,7 +14,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Icon } from 'triangle-ui'
+import { Icon } from 'triangle-ui-react'
 import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -117,9 +119,10 @@ export default function App() {
 ```
 
 ### 改变大小
+
 ```jsx
 import React from 'react'
-import { Icon } from 'triangle-ui'
+import { Icon } from 'triangle-ui-react'
 import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -190,7 +193,7 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Icon } from 'triangle-ui'
+import { Icon } from 'triangle-ui-react'
 import { FontAwesomeIcon, type FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -259,6 +262,4 @@ export default function App() {
 | style | 自定义样式 | `CSSProperties` | - |
 | onClick | 点击事件 | `React.MouseEventHandler` | - |
 
-以及所有原生的 `icon` 元素的属性。
-支持https://fontawesome.com
-所提供的所有icon图标
+以及所有原生的 `icon` 元素的属性。支持 [fontawesome](https://fontawesome.com) 所提供的所有icon图标。

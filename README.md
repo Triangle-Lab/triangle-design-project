@@ -1,40 +1,32 @@
-# triangle-ui
+# triangle-ui-react
 
-[![NPM version](https://img.shields.io/npm/v/triangle-ui.svg?style=flat)](https://npmjs.org/package/triangle-ui)
-[![NPM downloads](http://img.shields.io/npm/dm/triangle-ui.svg?style=flat)](https://npmjs.org/package/triangle-ui)
+![triangle-ui-react](https://jetzihan-img.oss-cn-beijing.aliyuncs.com/blog/logo.png)
 
-A beautiful and intuitive component library for React.
+- 🎊 开源的 React UI 组件库。
+- 🎢 基于 React Hooks。
+- 💦 使用 TypeScript 编写。
 
-## Usage
-
-TODO
-
-## Options
-
-TODO
-
-## Development
+## 安装
 
 ```bash
-# install dependencies
-$ pnpm install
-
-# develop library by docs demo
-$ pnpm start
-
-# build library source code
-$ pnpm run build
-
-# build library source code in watch mode
-$ pnpm run build:watch
-
-# build docs
-$ pnpm run docs:build
-
-# check your project for potential problems
-$ pnpm run doctor
+npm i triangle-ui-react
 ```
 
-## LICENSE
+## 快速上手
 
-MIT
+```jsx
+import React from 'react'
+import { Button } from 'triangle-ui-react'
+
+export default function App() {
+  return (
+    <div>
+      <Button>Default</Button>
+    </div>
+  );
+};
+```
+
+## 文档
+
+[triangle-ui](https://triangle-ui.netlify.app/)
