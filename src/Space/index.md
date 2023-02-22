@@ -22,7 +22,7 @@ import { Divider, DividerStyle } from 'triangle-ui';
 
 export default function App() {
   return (
-    <div>
+    <div style={{overflowX: "auto", width:"100%"}}>
       <Space
         size={SpaceingSize.Large}
         direction={Direction.Horizontal}
@@ -79,7 +79,7 @@ import { Divider, DividerStyle } from 'triangle-ui';
 
 export default function App() {
   return (
-    <div>
+    <div style={{overflowX: "auto", width:"100%"}}>
       <Space
         size={SpaceingSize.Small}
         direction={Direction.Vertical}
@@ -128,7 +128,7 @@ import { Divider, DividerStyle } from 'triangle-ui';
 
 export default function App() {
   return (
-    <div>
+    <div style={{overflowX: "auto", width:"100%"}}>
       <Space
         size={SpaceingSize.Small}
         direction={Direction.Horizontal}

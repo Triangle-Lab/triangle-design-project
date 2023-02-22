@@ -21,7 +21,7 @@ let start: boolean = false;
 
 export default function App() {
   const [percent, setPercent] = useState(0);
-
+  const [isClicked, setIsClicked] = useState(false);
   const handleButtonClick = () => {
     start = true;
     setTimeout(() => {
@@ -46,10 +46,14 @@ export default function App() {
     <div>
       <Progress percent={percent} />
       <Button
+        disabled={isClicked}
         style={{ marginTop: 5 + 'px' }}
         size="sm"
         btnType="primary"
-        onClick={handleButtonClick}
+        onClick={()=>{
+          handleButtonClick();
+          setIsClicked(true);
+        }}
       >
         Start
       </Button>
