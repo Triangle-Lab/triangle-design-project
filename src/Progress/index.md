@@ -1,4 +1,6 @@
 ---
+group:
+  title: 数据展示
 toc: content
 ---
 
@@ -14,8 +16,8 @@ toc: content
 
 ```jsx
 import React, { useState, useEffect } from 'react';
-import { Button } from 'triangle-ui';
-import { Progress } from 'triangle-ui';
+import { Button } from 'triangle-ui-react';
+import { Progress } from 'triangle-ui-react';
 
 let start: boolean = false;
 
@@ -68,8 +70,8 @@ export default function App() {
 
 ```jsx
 import React, { useState, useEffect } from 'react';
-import { Button } from 'triangle-ui';
-import { Progress } from 'triangle-ui';
+import { Button } from 'triangle-ui-react';
+import { Progress } from 'triangle-ui-react';
 
 export default function App() {
 
@@ -87,8 +89,8 @@ export default function App() {
 
 ```jsx
 import React, { useState, useEffect } from 'react';
-import { Button } from 'triangle-ui';
-import { Progress } from 'triangle-ui';
+import { Button } from 'triangle-ui-react';
+import { Progress } from 'triangle-ui-react';
 
 export default function App() {
 
@@ -99,6 +101,7 @@ export default function App() {
   );
 }
 ```
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 |

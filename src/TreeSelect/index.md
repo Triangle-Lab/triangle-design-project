@@ -1,4 +1,6 @@
 ---
+group:
+  title: 数据输入
 toc: content
 ---
 
@@ -17,7 +19,7 @@ toc: content
 同时，若有需要，可以使用`onExpand`回调函数来获取展开的节点数据。这个数据的回传仅会回传被展开节点的value值。
 
 ```tsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -71,7 +73,6 @@ export default function App() {
 export default App;
 ```
 
-
 ### 勾选框
 
 默认情况下，选择器的勾选框为方形勾选框。可以根据自己的偏好改变勾选框的形状。在某些使用场景下，可能需要禁用选择，这时可以使用`checkable`属性设置为`false`来禁用勾选框。
@@ -79,7 +80,7 @@ export default App;
 每个节点前的展开图标也可以选择是否显示。
 
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -132,9 +133,8 @@ export default App;
 
 在树状节点中，除了`value`属性存储节点值和`label`属性设置节点显示文本外，还可以传入节点相关的其他属性来控制树状选择器的行为样式。`unfold`设置一个节点是否被默认选中,`defaultSelected`是否被默认展开。
 
-
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -192,7 +192,7 @@ export default App;
 可以让一个选择菜单默认为展开的样式。
 
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -247,7 +247,7 @@ export default App;
 同时，可以设置菜单的展开位置，默认为向下，但也可以让其在其他位置呈现。
 
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -305,7 +305,7 @@ export default App;
 有些使用场景中，不需要输入框，仅仅需要一个选择菜单，这时选择的节点也会通过回调函数返回。  
 
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -363,7 +363,7 @@ export default App;
 输入不同的长宽，让选择菜单呈现不同的大小。
 
 ```jsx
-import { TreeSelect } from 'triangle-ui';
+import { TreeSelect } from 'triangle-ui-react';
 
 const data = [
   {
@@ -417,7 +417,6 @@ export default App;
 ```
 
 ## API
-
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :---: | :---: | :---: | :---: | :---: |

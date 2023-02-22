@@ -1,4 +1,6 @@
 ---
+group:
+  title: 数据输入
 toc: content
 ---
 
@@ -14,7 +16,7 @@ toc: content
 
 ```jsx
 import React,{useState} from 'react'
-import { DatePicker,selectedDateType } from 'triangle-ui'
+import { DatePicker,selectedDateType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()
@@ -42,7 +44,7 @@ export default function App() {
 
 ```jsx
 import React,{useState} from 'react'
-import { DatePicker,selectedDateType } from 'triangle-ui'
+import { DatePicker,selectedDateType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()
@@ -70,7 +72,7 @@ export default function App() {
 
 ```jsx
 import React,{useState} from 'react'
-import { DatePicker,selectedDateType } from 'triangle-ui'
+import { DatePicker,selectedDateType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()
@@ -111,7 +113,7 @@ export default function App() {
 
 ```jsx
 import React,{useState} from 'react'
-import { DatePicker,selectedDateType } from 'triangle-ui'
+import { DatePicker,selectedDateType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()
@@ -154,7 +156,7 @@ export default function App() {
 
 ```jsx
 import React, {useState} from 'react'
-import { RangeDatePicker, selectedDateRangeType } from 'triangle-ui'
+import { RangeDatePicker, selectedDateRangeType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()
@@ -187,7 +189,7 @@ export default function App() {
 
 ```jsx
 import React, {useState} from 'react'
-import { RangeDatePicker, selectedDateRangeType } from 'triangle-ui'
+import { RangeDatePicker, selectedDateRangeType } from 'triangle-ui-react'
 
 export default function App() {
   const now = new Date()

@@ -1,4 +1,6 @@
 ---
+group:
+  title: 导航
 toc: content
 ---
 
@@ -14,7 +16,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Breadcrumb, BreadcrumbObjectsType } from 'triangle-ui'
+import { Breadcrumb, BreadcrumbObjectsType } from 'triangle-ui-react'
 
 const objectsExample: BreadcrumbObjectsType[] = [
   {
@@ -45,7 +47,7 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Breadcrumb, BreadcrumbObjectsType } from 'triangle-ui'
+import { Breadcrumb, BreadcrumbObjectsType } from 'triangle-ui-react'
 
 export default function App() {
   return (

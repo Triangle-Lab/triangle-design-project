@@ -1,4 +1,6 @@
 ---
+group:
+  title: 通用
 toc: content
 ---
 
@@ -14,7 +16,7 @@ toc: content
 
 ```jsx
 import React, { useState } from 'react'
-import { Switch } from 'triangle-ui'
+import { Switch } from 'triangle-ui-react'
 
 export default function App() {
   const [checked, setChecked] = useState(false);
@@ -39,7 +41,7 @@ export default function App() {
 
 ```jsx
 import React, { useState } from 'react'
-import { Switch } from 'triangle-ui'
+import { Switch } from 'triangle-ui-react'
 
 export default function App() {
   const [checked, setChecked] = useState(false);

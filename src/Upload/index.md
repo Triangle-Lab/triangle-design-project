@@ -1,4 +1,6 @@
 ---
+group:
+  title: 数据输入
 toc: content
 ---
 
@@ -15,8 +17,8 @@ Upload 组件可以让用户上传文件。
 ```tsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 export default function App() {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -63,8 +65,8 @@ UpLoad 组件可以一个文件一个文件的上传，也可以一次性上传�
 ```jsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 export default function App() {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -111,8 +113,8 @@ Upload 组件可以通过设置 drag 属性为 true 来实现拖拽上传功能�
 ```jsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 export default function App() {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -156,8 +158,8 @@ Upload 组件可以设置预设文件列表。
 ```tsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 const fileList = [
   {
@@ -197,8 +199,8 @@ Upload 组件可以限制上传文件类型和大小。在下面的例子中，�
 ```tsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 export default function App() {
   const beforeUpload = (file) => {
@@ -238,8 +240,8 @@ Upload 组件可以设置上传的请求头。在下面的例子中，我们设�
 ```tsx
 import React, { useState } from 'react'
 import { Upload , UploadFile} from '.'
-import { Button } from 'triangle-ui'
-import { Icon } from 'triangle-ui'
+import { Button } from 'triangle-ui-react'
+import { Icon } from 'triangle-ui-react'
 
 export default function App() {
   const headers = {

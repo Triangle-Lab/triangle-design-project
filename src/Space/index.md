@@ -1,4 +1,6 @@
 ---
+group:
+  title: 布局
 toc: content
 ---
 
@@ -16,9 +18,9 @@ Space组件默认将子元素进行排列，控制其间距。
 
 ```tsx
 import React from 'react';
-import { Button, ButtonType } from 'triangle-ui';
-import { Space, Direction, Side, SpaceingSize } from 'triangle-ui';
-import { Divider, DividerStyle } from 'triangle-ui';
+import { Button, ButtonType } from 'triangle-ui-react';
+import { Space, Direction, Side, SpaceingSize } from 'triangle-ui-react';
+import { Divider, DividerStyle } from 'triangle-ui-react';
 
 export default function App() {
   return (
@@ -73,9 +75,9 @@ export default function App() {
 
 ```tsx
 import React from 'react';
-import { Button, ButtonType } from 'triangle-ui';
-import { Space, Direction, Side, SpaceingSize } from 'triangle-ui';
-import { Divider, DividerStyle } from 'triangle-ui';
+import { Button, ButtonType } from 'triangle-ui-react';
+import { Space, Direction, Side, SpaceingSize } from 'triangle-ui-react';
+import { Divider, DividerStyle } from 'triangle-ui-react';
 
 export default function App() {
   return (
@@ -122,9 +124,9 @@ export default function App() {
 
 ```tsx
 import React from 'react';
-import { Button, ButtonType } from 'triangle-ui';
-import { Space, Direction, Side, SpaceingSize } from 'triangle-ui';
-import { Divider, DividerStyle } from 'triangle-ui';
+import { Button, ButtonType } from 'triangle-ui-react';
+import { Space, Direction, Side, SpaceingSize } from 'triangle-ui-react';
+import { Divider, DividerStyle } from 'triangle-ui-react';
 
 export default function App() {
   return (

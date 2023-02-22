@@ -31,8 +31,10 @@ export default {
 
   // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?|ts)$',
 // 测试目录 src/xxx/xxx.test.tsx
-  testRegex: '(/src/*/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?|ts)$',
-
+  // testRegex: '(/src/*/.*|(\\.|/)(test))\\.(jsx?|tsx?|ts)$',
+ testMatch: [
+    '**/*.test.tsx'
+  ],
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
   // 忽略scss文件

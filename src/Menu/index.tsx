@@ -20,24 +20,24 @@ interface IMenuContext {
   index: string;
   onSelect?: (selectedIndex: string) => void;
   mode?: MenuMode;
-  defaultOpenSubMenus?: string[];  
+  defaultOpenSubMenus?: string[];
 }
 
-export const MenuContext = createContext<IMenuContext>({index: '0'})
+export const MenuContext = createContext<IMenuContext>({ index: '0' })
 
 type NativeMenuProps = BaseMenuProps & React.HTMLAttributes<HTMLElement>
 export type MenuProps = Partial<NativeMenuProps>
 
 export const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, style, children, defaultIndex, onSelect, defaultOpenSubMenus } = props
-  const [ currentActive, setActive ] = useState(defaultIndex)
-  const classes = classNames('viking-menu', className, {
+  const [currentActive, setActive] = useState(defaultIndex)
+  const classes = classNames('triangle-menu', className, {
     'menu-vertical': mode === 'vertical',
     'menu-horizontal': mode !== 'vertical',
   })
   const handleClick = (index: string) => {
     setActive(index)
-    if(onSelect) {
+    if (onSelect) {
       onSelect(index)
     }
   }

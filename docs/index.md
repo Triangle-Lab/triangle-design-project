@@ -1,7 +1,7 @@
 ---
 hero:
   title: Triangle-ui
-  description: A beautiful and intuitive component library for React.
+  description: 美观且易用的 React 组件库
   actions:
     - text: 快速上手
       link: /components/Alert
@@ -106,6 +106,7 @@ export default function App(): JSX.Element {
 
   if(!start && percent === 0)
     handleProgress();
+
 
   return (
     <div style={{overflowX: "auto", width:"100%"}}>
