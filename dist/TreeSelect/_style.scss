@@ -1,0 +1,165 @@
+.container {
+  position: relative;
+}
+
+.tree-node {
+  position: relative;
+
+  &:hover,
+  &.hover {
+    border: $tree-hover-border-color;
+    border-radius: 10px;
+  }
+}
+
+.tree-node-header {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.tree-node-label {
+  //flex: 1;
+  width: auto;
+  padding: 3px 10px;
+  font-size: 14px;
+  user-select: none;
+  border-radius: 10px;
+}
+
+.tree-node-label-selected {
+  background-color: $tree-node-label-selected-color;
+}
+
+.tree-node-checkbox {
+  width: 16px;
+  height: 16px;
+  padding: 0 5px;
+  opacity: 1;
+
+  &:hover .checkBox {
+    opacity: 1;
+  }
+}
+
+.tree-node-children {
+  padding-left: 20px;
+  display: none;
+}
+
+.tree-node-expanded {
+  display: block;
+}
+
+.checkBox {
+  width: 1.1em;
+  height: 1.1em;
+
+  &.checkBox-checked {
+    opacity: 1;
+  }
+
+  &.checkBox-unchecked {
+    opacity: 0.3;
+  }
+}
+
+.space {
+  opacity: 0;
+}
+
+.inputClass {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  overflow: hidden;
+  border-radius: 15px;
+  border: $tree-input-border;
+
+  &:hover,
+  &.hover {
+    transition: border linear 0.1s, box-shadow linear 0.1s;
+    border-color: $tree-input-border-color;
+    box-shadow: $tree-input-border-box-shadow;
+  }
+}
+
+.inputClass-active {
+  transition: border linear 0.1s, box-shadow linear 0.1s;
+  border-color: $tree-input-border-color;
+  box-shadow: $tree-input-border-box-shadow;
+}
+
+.inputblock {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 25px;
+  padding: 0 10px;
+  margin: 0 2px;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  background-color: $tree-input-block-bg;
+
+  &:hover,
+  &.hover {
+    background-color: $tree-input-block-active;
+  }
+}
+
+.blocklabal {
+  width: 80%;
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+.cross {
+  float: right;
+  width: 0.8em;
+  height: 0.8em;
+  opacity: 0.5;
+  margin-left: 5px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.inputPlaceholder {
+  padding: 0 15px;
+  font-size: 12px;
+  user-select: none;
+  color: #b0b0b0;
+}
+
+.treeContainer {
+  opacity: 1;
+  margin: 2px 0;
+  overflow: hidden;
+  border-radius: 10px;
+
+  &.treeContainer-default {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px #d5d5d5;
+    z-index: 1;
+  }
+
+  &.treeContainer-hide {
+    display: none;
+  }
+
+  &.treeContainer-noInput {
+    border: 1px solid #c5c5c5;
+  }
+}
+
+.itemsClass {
+  display: flex;
+  width: 92%;
+  overflow: hidden;
+}
