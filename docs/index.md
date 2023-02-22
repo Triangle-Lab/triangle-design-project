@@ -7,8 +7,9 @@ hero:
       link: /components/Alert
 ---
 
+<iframe src="https://stackblitz.com/edit/react-ts-ifnnmy?embed=1&file=App.tsx" style="width: 100%; height: 600px; border: 0; border-radius: 4px; overflow: hidden;" title="triangle-ui-react"></iframe>
 
-```jsx
+<!-- ```jsx
 import React, { useState, useEffect } from 'react';
 import { Alert, AlertType, Button, ButtonType } from 'triangle-ui-react';
 import { Space, Direction, Side, SpaceingSize } from 'triangle-ui-react';
@@ -107,7 +108,6 @@ export default function App(): JSX.Element {
 
   if(!start && percent === 0)
     handleProgress();
-
 
   return (
     <div style={{overflowX: "auto", width:"100%"}}>
@@ -242,4 +242,4 @@ export default function App(): JSX.Element {
     </div>
   );
 }
-```
+``` -->
