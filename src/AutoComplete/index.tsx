@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { type FC, useState, type ChangeEvent, type KeyboardEvent, type ReactElement, useEffect, useRef } from 'react'
 import { Input, type InputProps } from '../Input'
-// import Icon from '../Icon'
+import Icon from '../Icon'
 import useDebounce from '../hooks/useDebounce'
 import classNames from 'classnames'
 import useClickOutside from '../hooks/useClickOutside'
@@ -16,6 +16,7 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   fetchSuggestions: (str: string) => DataSourceType[] | Promise<DataSourceType[]>
   onSelect?: (item: DataSourceType) => void
   renderOption?: (item: DataSourceType) => ReactElement
+  size?: 'lg' | 'sm'
 }
 
 export const AutoComplete: FC<AutoCompleteProps> = (props) => {
@@ -24,6 +25,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     onSelect,
     value,
     renderOption,
+    size,
     ...restProps
   } = props
 
@@ -34,6 +36,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   const triggerSearch = useRef(false)
   const componentRef = useRef<HTMLDivElement>(null)
   const debouncedValue = useDebounce(inputValue, 500)
+  const width = size === 'lg' ? '300px' : '200px'
 
   useClickOutside(componentRef, () => { setSugestions([]) })
   useEffect(() => {
@@ -100,15 +103,15 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   }
   const generateDropdown = (): JSX.Element => {
     return (
-      <ul>
-        { suggestions.map((item, index) => {
+      <ul className='ulclass' style={{ width: width }}>
+        {suggestions.map((item, index) => {
           const cnames = classNames('suggestion-item', {
-            'item-highlihted': index === highlightIndex
+            'item-highlighted': index === highlightIndex
           })
           return (
-            <li key = { index } className = { cnames } onClick = { () => { handleSelect(item) } }>
+            <li key={index} className={cnames} onClick={() => { handleSelect(item) }}>
               <>
-              { renderTemplate(item) }
+                {renderTemplate(item)}
               </>
             </li>
           )
@@ -117,18 +120,25 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     )
   }
   return (
-    <div className = "viking-auto-compete" ref = {componentRef}>
+    <div className="triangle-auto-compete" ref={componentRef}>
       <Input
-        value = { inputValue }
-        onChange = { handleChange }
-        onKeyDown = { handleKeyDown }
-        { ... restProps }
+        value={inputValue}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        size={size}
+        {...restProps}
       />
-      { loading &&
-      <ul>
-        {/* <Icon icon="spinner" spin/> */}
-      </ul>}
-      { (suggestions.length > 0) && generateDropdown() }
+      {loading &&
+        <ul>
+          <Icon icon="spinner" spin />
+        </ul>}
+      {(suggestions.length > 0) && generateDropdown()}
     </div>
   )
 }
+
+AutoComplete.defaultProps = {
+  size: 'sm'
+}
+
+export default AutoComplete

@@ -2,13 +2,15 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from '.'
 
-export interface MenuItemProps {
-  index?: string
-  disabled?: boolean
-  className?: string
-  style?: React.CSSProperties
-  children?: React.ReactNode
+export interface BaseMenuItemProps {
+  index?: string;
+  disabled?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
+
+type NativeMenuItemProps = BaseMenuItemProps & React.HTMLAttributes<HTMLElement>
+export type MenuItemProps = Partial<NativeMenuItemProps>
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props
@@ -17,16 +19,17 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     'is-disabled': disabled,
     'is-active': context.index === index
   })
-  const handleClick = (): void => {
-    if ((context.onSelect != null) && !(disabled ?? false) && (typeof index === 'string')) {
+  const handleClick = () => {
+    if (context.onSelect && !disabled && (typeof index === 'string')) {
       context.onSelect(index)
     }
   }
   return (
-    <li className = {classes} style = {style} onClick= { handleClick }>
-    {children}
+    <li className={classes} style={style} onClick={handleClick}>
+      {children}
     </li>
   )
 }
 
+MenuItem.displayName = 'MenuItem'
 export default MenuItem

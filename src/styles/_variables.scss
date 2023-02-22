@@ -32,8 +32,7 @@ $light:$gray-100 !default;
 $dark:$gray-800 !default;
 $primary-light:#0485fe29 !default;
 
-$theme-colors: (
-  "primary": $primary,
+$theme-colors: ("primary": $primary,
   "secondary": $secondary,
   "success": $success,
   "info": $info,
@@ -240,6 +239,7 @@ $menu-item-padding-y: .5rem !default;
 $menu-item-padding-x: 1rem !default;
 $menu-item-active-color: $primary !default;
 $menu-item-active-border-width: 2px !default;
+$menu-item-active-border-color: $primary !default;
 $menu-item-disabled-color: $gray-600 !default;
 
 //sub-menu
@@ -253,10 +253,10 @@ $input-padding-x: $btn-padding-x !default;
 $input-font-family: $btn-font-family !default;
 $input-font-size: $btn-font-size !default;
 $input-font-weight: $font-weight-base !default;
-$input-line-height: $btn-line-height !default;
+$input-line-height: 2 !default;
 
-$input-padding-y-sm: $btn-padding-y-sm !default;
-$input-padding-x-sm: $btn-padding-x-sm !default;
+$input-padding-y-sm: 0.06 !default;
+$input-padding-x-sm: 0.25 !default;
 $input-font-size-sm: $btn-font-size-sm !default;
 
 $input-padding-y-lg: $btn-padding-y-lg !default;
@@ -269,7 +269,7 @@ $input-disabled-border-color: rgba(118, 118, 118, 0.3) !default;
 
 $input-color: $gray-700 !default;
 $input-disabled-color: $gray-600 !default;
-$input-border-color: $gray-400 !default;
+$input-border-color: $gray-200 !default;
 $input-border-width: $border-width !default;
 $input-box-shadow: $box-shadow-inset !default;
 
@@ -278,7 +278,7 @@ $input-border-radius-lg: $border-radius-lg !default;
 $input-border-radius-sm: $border-radius-sm !default;
 
 $input-focus-bg: $input-bg !default;
-$input-focus-border-color: lighten($primary, 25%) !default;
+$input-focus-border-color: lighten($primary, 10%) !default;
 $input-focus-width: .2rem !default;
 $input-focus-color: $input-color !default;
 $input-focus-shadow-color: rgba($primary, .25) !default;
@@ -306,34 +306,36 @@ $progress-bar-color: $white !default;
 $progress-bar-transition: width .6s ease !default;
 
 // alerts
-$alert-bg:                          $gray-200 !default;
-$alert-color:                       $gray-700 !default;
-$alert-close-color:                 $gray-700 !default;
-$alert-icon-color:                  $gray-700 !default;
-$alert-title-default-color:         $gray-700 !default;
-$alert-title-success-color:         $success !default;
-$alert-title-danger-color:          $danger !default;
-$alert-title-warning-color:         $warning !default;
-$alert-description-default-color:   $gray-700 !default;
+$alert-bg: $gray-200 !default;
+$alert-color: $gray-700 !default;
+$alert-close-color: $gray-700 !default;
+$alert-icon-color: $gray-700 !default;
+$alert-title-default-color: $gray-700 !default;
+$alert-title-success-color: $success !default;
+$alert-title-danger-color: $danger !default;
+$alert-title-warning-color: $warning !default;
+$alert-description-default-color: $gray-700 !default;
 
 //menu
-$menu-border-width:                 $border-width !default;
-$menu-border-color:                 $border-color !default;
-$menu-box-shadow:                   inset 0 1px 0 rgba($white, .15), 0 1px 1px !default;
-$menu-transition:                   color .15s ease-in-out, border-color .15s !default;
+$menu-border-width: $border-width !default;
+$menu-border-color: $border-color !default;
+$menu-box-shadow: inset 0 1px 0 rgba($white, .15),
+0 1px 1px !default;
+$menu-transition: color .15s ease-in-out,
+border-color .15s !default;
 
 //menu-item
-$menu-item-padding-x:               1rem !default;
-$menu-item-padding-y:               .5rem !default;
-$menu-item-active-color:            $primary !default;
-$menu-item-active-border-width:     2px !default;
-$menu-item-disabled-color:          $gray-600 !default;
+$menu-item-padding-x: 1rem !default;
+$menu-item-padding-y: .5rem !default;
+$menu-item-active-color: $primary !default;
+$menu-item-active-border-width: 2px !default;
+$menu-item-disabled-color: $gray-600 !default;
 
 //TreeSelect
-$tree-hover-border-color:           1px solid #dfdfdf !default;
-$tree-node-label-selected-color:    #ebf0ff !default;
-$tree-input-border:                 1px solid #b0b0b0 !default;
-$tree-input-border-color:           rgba(47, 83, 211, 0.75) !default;
-$tree-input-border-box-shadow:      0 0 3px rgba(47, 83, 211, 0.75) !default;
-$tree-input-block-bg:               rgb(233, 244, 255) !default;
-$tree-input-block-active:           rgb(219, 237, 255) !default;
+$tree-hover-border-color: 1px solid #dfdfdf !default;
+$tree-node-label-selected-color: #ebf0ff !default;
+$tree-input-border: 1px solid #b0b0b0 !default;
+$tree-input-border-color: rgba(47, 83, 211, 0.75) !default;
+$tree-input-border-box-shadow: 0 0 3px rgba(47, 83, 211, 0.75) !default;
+$tree-input-block-bg: rgb(233, 244, 255) !default;
+$tree-input-block-active: rgb(219, 237, 255) !default;

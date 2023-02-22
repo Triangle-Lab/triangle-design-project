@@ -1,4 +1,6 @@
 ---
+group:
+  title: 布局
 toc: content
 ---
 
@@ -12,7 +14,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Divider, DividerStyle } from 'triangle-ui'
+import { Divider, DividerStyle } from 'triangle-ui-react'
 
 export default function App() {
   return (
@@ -29,7 +31,7 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Divider, DividerStyle } from 'triangle-ui'
+import { Divider, DividerStyle } from 'triangle-ui-react'
 
 export default function App() {
   return (
@@ -56,7 +58,7 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Divider, DividerStyle } from 'triangle-ui'
+import { Divider, DividerStyle } from 'triangle-ui-react'
 
 export default function App() {
   return (

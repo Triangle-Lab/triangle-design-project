@@ -1,37 +1,40 @@
-import React from 'react'
+import React from 'react';
 
-export interface SwitchProps {
-  title?: string
-  checked?: boolean
-  defaultChecked?: boolean
-  disabled?: boolean
-  onChange?: (checked: boolean) => void
-  type: 'primary' | 'danger' | 'success' | 'warning'
+interface SwitchProps {
+  onSwitch: (isOn: boolean) => void;
+  onColor?: string;
+  switchId: string;
 }
 
-const Switch: React.FC<SwitchProps> = (props) => {
-  const { title, checked, defaultChecked, disabled, onChange, type } = props
+const Switch = ({ onSwitch, onColor, switchId }: SwitchProps) => {
+  const [isOn, setOn] = React.useState<boolean>(false);
   return (
-    <label className={`checkboxWrapper checkboxWrapper-${type}`}>
+    <>
       <input
-        checked={checked}
+        checked={isOn}
+        className="switch-checkbox"
+        id={switchId}
         type="checkbox"
-        defaultChecked={defaultChecked}
-        disabled={disabled}
-        onChange={(e) => {
-          if (onChange != null) {
-            onChange(e.target.checked)
-          }
+        onClick={() => {
+          setOn(!isOn);
+          // 回调函数
+          onSwitch(!isOn);
         }}
       />
-      <div className={`checkmark checkmark-${type}`}></div>
-      {(title != null) && <span>{title}</span>}
-    </label>
-  )
-}
+      <label
+        style={{ background: isOn ? onColor : '' }}
+        className="switch-label"
+        htmlFor={switchId}
+      >
+        <span className={`switch-button`} />
+      </label>
+    </>
+  );
+};
 
+// default props
 Switch.defaultProps = {
-  type: 'primary'
-}
+  onColor: '#057EFF',
+};
 
-export default Switch
+export default Switch;

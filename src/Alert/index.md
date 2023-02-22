@@ -1,4 +1,6 @@
 ---
+group:
+  title: 反馈
 toc: content
 ---
 
@@ -12,7 +14,7 @@ toc: content
 
 ```jsx
 import React from 'react'
-import { Alert, AlertType } from 'triangle-ui'
+import { Alert, AlertType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -27,7 +29,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Alert, AlertType } from 'triangle-ui'
+import { Alert, AlertType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -46,7 +48,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React from 'react'
-import { Alert, AlertType } from 'triangle-ui'
+import { Alert, AlertType } from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (
@@ -61,7 +63,7 @@ export default function App (): JSX.Element {
 
 ```jsx
 import React, {useState} from 'react'
-import { Alert, AlertType, Button, ButtonType, ButtonSize } from 'triangle-ui'
+import { Alert, AlertType, Button, ButtonType, ButtonSize } from 'triangle-ui-react'
 
 
 export default function AlertShow (): JSX.Element {

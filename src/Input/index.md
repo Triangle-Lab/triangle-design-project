@@ -1,4 +1,6 @@
 ---
+group:
+  title: 数据输入
 toc: content
 ---
 
@@ -14,15 +16,14 @@ toc: content
 
 ```jsx
 import React, {useState} from 'react'
-import { Input } from 'triangle-ui'
+import { Input } from 'triangle-ui-react'
 
 export default function App() {
   const [value,setValue] = useState('')
   return (
-    <div>
+    <div style={{width:"40%"}}>
       <Input  
         placeholder ="请输入" 
-        size = 'sm' 
         onChange={(e) => {setValue(e.target.value)}}  
         />
     </div>
@@ -36,11 +37,11 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Input } from 'triangle-ui'
+import { Input } from 'triangle-ui-react'
 
 export default function App() {
   return (
-    <div>
+    <div style={{width:"40%"}}>
       <Input placeholder ="不能改动哦" disabled={true}/>
     </div>
   );
@@ -53,15 +54,19 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Input } from 'triangle-ui'
+import { Input } from 'triangle-ui-react'
 
 export default function App() {
   return (
-    <div>
+    <div style={{width:"40%"}}>
       <Input 
         style={{marginLeft:"1rem",marginTop:"1rem"}} 
         size = 'lg'
         placeholder ="我是大号的"
+      />
+      <Input 
+        style={{marginLeft:"1rem",marginTop:"1rem"}} 
+        placeholder ="我是默认的"
       />
       <Input 
         style={{marginLeft:"1rem",marginTop:"1rem"}} 
@@ -79,17 +84,16 @@ export default function App() {
 
 ```jsx
 import React from 'react'
-import { Input } from 'triangle-ui'
+import { Input } from 'triangle-ui-react'
 
 export default function App() {
   return (
-    <div>
+    <div style={{width:"40%"}}>
       <Input
         style={{marginLeft:"1rem",marginTop:".1rem"}} 
-        prepand = 'http://'
+        prepend = 'http://'
         placeholder ="请输入网址"
         append = '.com'
-        size = 'lg'
       />
     </div>
   );
@@ -98,20 +102,19 @@ export default function App() {
 
 ### 添加图标
 
-支持https://fontawesome.com所提供的所有icon图标
+支持 [fontawesome☺](https://fontawesome.com) 所提供的所有icon图标。
 
 ```jsx
 import React, {useState} from 'react'
-import { Input } from 'triangle-ui'
+import { Input } from 'triangle-ui-react'
 
 export default function App() {
   const [value,setValue] = useState('')
   return (
-    <div>
+    <div style={{width:"40%"}}>
       <Input 
         icon='arrow-right' 
         placeholder ="请输入" 
-        size = 'sm' 
         onChange={(e) => {setValue(e.target.value)}}  
         />
     </div>
@@ -123,10 +126,10 @@ export default function App() {
 
 | 参数 | 说明 | 可用值 | 默认值 |
 | :---: | :----: | :---: | :---: |
-| disable | 是否禁用input | `boolean` | `flase` |
-| size | 输入框大小 | `lg` `sm` | `sm` |
+| disable | 是否禁用 input | `boolean` | `false` |
+| size | 输入框大小 | `lg` `sm` `default` | `default` |
 | icon | 添加图标，在右侧悬浮添加一个图标，用于提示 | `IconProp` | - |
-| prepand | 添加前缀，用于配置一些固定组合 | `string` | - |
+| prepend | 添加前缀，用于配置一些固定组合 | `string` | - |
 | append | 添加后缀，用于配置一些固定组合 | `ReactNode` | - |
 
 以及所有原生的 `input` 元素的属性。type等属性值。

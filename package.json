@@ -1,7 +1,8 @@
 {
-  "name": "triangle-ui",
-  "version": "0.0.1",
+  "name": "triangle-ui-react",
+  "version": "0.0.2",
   "description": "A beautiful and intuitive component library for React.",
+  "private": false,
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,7 +11,6 @@
     "build": "father build",
     "build:watch": "father dev",
     "docs:build": "dumi build",
-    "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
@@ -18,9 +18,21 @@
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest"
   },
+  "homepage": "https://triangle-ui.netlify.app/",
   "authors": [
     "TriangleLab"
   ],
+  "keywords": [
+    "react",
+    "component",
+    "ui",
+    "library",
+    "triangle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Triangle-Lab/triangle-design-project"
+  },
   "license": "MIT",
   "files": [
     "dist"
@@ -52,7 +64,8 @@
   },
   "peerDependencies": {
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "axios": "^0.24.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -83,7 +96,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "stylelint": "^14.9.1",
-    "typescript": "*"
+    "typescript": "*",
+    "axios": "^0.24.0"
   },
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
@@ -101,6 +115,7 @@
     "node-sass": "^8.0.0",
     "react-icons": "^4.7.1",
     "react-transition-group": "^4.4.5",
-    "ts-jest": "^29.0.5"
+    "ts-jest": "^29.0.5",
+    "axios": "^0.24.0"
   }
 }

@@ -13,6 +13,8 @@ export default defineConfig({
     socialLinks: {
       github: 'https://github.com/Triangle-Lab/triangle-design-project',
     },
+    footer:"Triangle-ui ©2023 Created by Triangle-Lab",
+    prefersColor: { default: 'light', switch: false }
   },
   styles: [styles],
   favicons: ['/logo.svg'],
