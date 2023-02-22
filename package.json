@@ -1,6 +1,6 @@
 {
   "name": "triangle-ui-react",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A beautiful and intuitive component library for React.",
   "private": false,
   "module": "dist/index.js",
@@ -109,13 +109,18 @@
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.27",
     "@types/react-transition-group": "^4.4.5",
+    "@umijs/bundler-vite": "^4.0.52",
+    "@umijs/plugin-run": "^4.0.52",
+    "axios": "^0.24.0",
     "classnames": "^2.3.2",
+    "esbuild": "^0.17.10",
     "jest": "^29.4.2",
     "jest-environment-jsdom": "^29.4.2",
     "node-sass": "^8.0.0",
+    "pino": "^8.10.0",
     "react-icons": "^4.7.1",
+    "react-router": "^6.8.1",
     "react-transition-group": "^4.4.5",
-    "ts-jest": "^29.0.5",
-    "axios": "^0.24.0"
+    "ts-jest": "^29.0.5"
   }
 }
