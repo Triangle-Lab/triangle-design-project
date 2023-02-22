@@ -1,8 +1,12 @@
 ---
+group:
+  title: 数据输入
 toc: content
 ---
 
-# AutoComplete 
+# AutoComplete
+
+自动完成。用于帮助用户快速完成输入。
 
 ## 基本的数据源
 
@@ -10,7 +14,7 @@ toc: content
 
 ```tsx
 import React, { useState } from 'react';
-import { AutoComplete } from 'triangle-ui';
+import { AutoComplete } from 'triangle-ui-react';
 
 const fruits = [
   { value: 'Apple' },
@@ -56,11 +60,11 @@ export default function App() {
 
 ## 异步数据源
 
-下面展示了如何从异步数据源中获取数据。在这个例子中，数据源是一个基于Fetch API的异步调用。当用户输入框中输入城市名称时，输入框会返回匹配的城市名称。在输入框中选择了一个选项后，页面会显示所选城市的名称。注：这里使用的api可能无法查询到中文城市名称。
+下面展示了如何从异步数据源中获取数据。在这个例子中，数据源是一个基于 `Fetch API` 的异步调用。当用户输入框中输入城市名称时，输入框会返回匹配的城市名称。在输入框中选择了一个选项后，页面会显示所选城市的名称。注：这里使用的测试 api 可能无法查询到中文城市名称。因此你可以输入 `a` `b` `c` 等字母来测试。
 
 ```tsx
 import React, { useState } from 'react';
-import { AutoComplete } from 'triangle-ui';
+import { AutoComplete } from 'triangle-ui-react';
 
 export default function App() {
   const [selectedCity, setSelectedCity] = useState('');
@@ -94,7 +98,7 @@ export default function App() {
 
 ```tsx
 import React, { useState } from 'react';
-import { AutoComplete } from 'triangle-ui';
+import { AutoComplete } from 'triangle-ui-react';
 
 const fruits = [
   { value: 'Apple' },

@@ -1,7 +1,7 @@
 ---
 hero:
   title: Triangle-ui
-  description: A beautiful and intuitive component library for React.
+  description: 美观且易用的 React 组件库
   actions:
     - text: 快速上手
       link: /components/Alert
@@ -10,7 +10,7 @@ hero:
 
 ```jsx
 import React from 'react'
-import { Alert, AlertType, Button, ButtonType} from 'triangle-ui'
+import { Alert, AlertType, Button, ButtonType} from 'triangle-ui-react'
 
 export default function App (): JSX.Element {
   return (

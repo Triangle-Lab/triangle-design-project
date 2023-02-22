@@ -1,4 +1,6 @@
 ---
+group:
+  title: 导航
 toc: content
 ---
 
@@ -14,7 +16,7 @@ toc: content
 
 ```jsx
 import React, { useState } from 'react';
-import {Menu, MenuItem} from 'triangle-ui';
+import {Menu, MenuItem} from 'triangle-ui-react';
 
 export default function App() {
   const [selected, setSelected] = useState('1');
@@ -42,8 +44,8 @@ export default function App() {
 
 ```jsx
 import React, { useState } from 'react';
-import { Menu, MenuItem } from 'triangle-ui';
-import { SubMenu } from 'triangle-ui';
+import { Menu, MenuItem } from 'triangle-ui-react';
+import { SubMenu } from 'triangle-ui-react';
 
 export default function App() {
   const [selected, setSelected] = useState('1');
@@ -74,8 +76,8 @@ export default function App() {
 
 ```jsx
 import React, { useState } from 'react';
-import { Menu, MenuItem } from 'triangle-ui';
-import { SubMenu } from 'triangle-ui';
+import { Menu, MenuItem } from 'triangle-ui-react';
+import { SubMenu } from 'triangle-ui-react';
 
 export default function App() {
   const [selected, setSelected] = useState('1');
@@ -114,8 +116,8 @@ export default function App() {
 
 ```jsx
 import React, { useState } from 'react';
-import { Menu, MenuItem } from 'triangle-ui';
-import { SubMenu } from 'triangle-ui';
+import { Menu, MenuItem } from 'triangle-ui-react';
+import { SubMenu } from 'triangle-ui-react';
 
 export default function App() {
   return (
@@ -137,3 +139,32 @@ export default function App() {
 }
 ```
 
+## API
+
+### Menu
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| mode | 菜单类型，可选值为 `horizontal` `vertical` | string | `horizontal` |
+| defaultIndex | 默认选中的菜单项的索引值 | string | - |
+| onSelect | 被选中时触发的回调函数 | function | - |
+| className | 自定义类名 | string | - |
+| style | 自定义样式 | object | - |
+
+### MenuItem
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| index | 菜单项的索引值 | string | - |
+| disabled | 是否禁用 | boolean | `false` |
+| className | 自定义类名 | string | - |
+| style | 自定义样式 | object | - |
+
+### SubMenu
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| index | 菜单项的索引值 | string | - |
+| title | 子菜单标题 | string | - |
+| className | 自定义类名 | string | - |
+| style | 自定义样式 | object | - |
