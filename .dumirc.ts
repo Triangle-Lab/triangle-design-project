@@ -7,7 +7,7 @@ export default defineConfig({
     name: 'Triangle-ui',
     logo: '/logo.svg',
     nav: [
-      { title: '指南', link: '/guide' },
+      { title: '指南', link: '/guide/guide' },
       { title: '组件', link: '/components/Alert' },
     ],
     socialLinks: {

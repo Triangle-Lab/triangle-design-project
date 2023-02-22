@@ -1,0 +1,45 @@
+// divider component styles
+
+$divider-color: $gray-400 !default;
+$divider-font-size: $font-size-sm !default;
+$divider-line-height: $line-height-sm !default;
+$divider-height: 1px !default;
+$divider-margin: 1rem !default;
+
+
+.divider{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: $divider-color;
+    font-size: $divider-font-size;
+    // line-height: $divider-line-height;
+    &::before,
+    &::after{
+        content: '';
+        flex: 1;
+        width: 100%;
+        height: $divider-height;
+        background-color: currentColor;
+    }
+    &.divider-primary{
+        color: $primary;
+    }
+    &.divider-secondary{
+        color: $secondary;
+    }
+    &.divider-success{
+        color: $success;
+    }
+    &.divider-danger{
+        color: $danger;
+    }
+    &.divider-warning{
+        color: $warning;
+    }
+}
+
+.divider-text{
+    margin: 0 $divider-margin;
+    @include bounce();
+}

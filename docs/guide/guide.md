@@ -15,3 +15,9 @@ toc: content
 - Node.js 10.0.0+
 
 不支持 IE 浏览器。
+
+## 安装
+
+```bash
+npm install triangle-ui-react
+```
