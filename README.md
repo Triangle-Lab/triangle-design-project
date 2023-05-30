@@ -1,5 +1,7 @@
 # triangle-ui-react
 
+> 第五届字节跳动青训营超级码力奖
+
 ![triangle-ui-react](https://jetzihan-img.oss-cn-beijing.aliyuncs.com/blog/logo.png)
 
 - 🎊 开源的 React UI 组件库。
